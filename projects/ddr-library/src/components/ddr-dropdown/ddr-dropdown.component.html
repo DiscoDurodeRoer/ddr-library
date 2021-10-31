@@ -1,0 +1,45 @@
+<div class="ddr-dropdown" ddrClickOutside (clickOutside)="hidePanelItems()">
+  
+  <div class="input-group" (click)="showPanelOptions()">
+    <input type="text" name="value" [(ngModel)]="valueShow" class="form-control" readonly>
+    <div class="input-group-append">
+      <button>
+        <i class="fa fa-caret-down"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="ddr-dropdown__panel-items" [@overlayAnimation]="{value: 'visible'}" *ngIf="showItems">
+
+    <div class="ddr-dropdown__panel-items--search input-group">
+      <input type="text" name="value" class="form-control" #search (keyup)="filter(search.value)">
+      <div class="input-group-append">
+        <button>
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+    <div class="ddr-dropdown__panel-items--no-results" *ngIf="optionsShow.length == 0">
+      <span>{{labelNoResults}}</span>
+    </div>
+    <ul *ngIf="optionsShow.length > 0">
+      <li *ngFor="let item of optionsShow" (click)="onSelectItem(item)">
+        
+        <ng-container *ngTemplateOutlet="(template ? itemTemplate : defaultItemTemplate); context: { item }">
+        </ng-container>
+
+        <ng-template #defaultItemTemplate let-item="item">
+          <span>{{item?.label}}</span>
+        </ng-template>
+        
+        <ng-template #itemTemplate 
+          [ngTemplateOutlet]="template"
+          [ngTemplateOutletContext]="{item: item}"  
+        ></ng-template>
+
+      </li>
+    </ul>
+
+  </div>
+
+</div>

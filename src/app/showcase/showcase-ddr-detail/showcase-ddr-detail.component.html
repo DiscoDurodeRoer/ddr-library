@@ -1,0 +1,292 @@
+<base-showcase>
+
+  <div examples>
+
+<div class="row">
+  <div class="col-12">
+
+    <div class="row">
+      <div class="col-12 subtitle-ddr">
+        <span>Ejemplo 1: Estandar</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <button class="btn btn-primary" (click)="openDetailEx1()">Abrir</button>
+      </div>
+    </div>
+    
+    <div class="row mt-3">
+      <div class="col-12 subtitle-ddr">
+        <span>Ejemplo 2: Sin titulo</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <button class="btn btn-primary" (click)="openDetailEx2()">Abrir</button>
+      </div>
+    </div>
+    
+    <div class="row mt-3">
+      <div class="col-12 subtitle-ddr">
+        <span>Ejemplo 3: Sin overlay</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <button class="btn btn-primary" (click)="openDetailEx3()">Abrir</button>
+      </div>
+    </div>
+  
+    <ddr-detail [showOverlay]="showOverlay" [showTitle]="showTitle" *ngIf="showDetail" (close)="closeDetail()">
+
+      <h1 detail-title>Detalle ejemplo</h1>
+
+      <div class="row" detail-content>
+        <div class="col-12">
+
+          <form>
+
+            <div class="row fom-group">
+              <div class="col-12">
+                <label for="field1">Campo 1</label>
+                <input type="text" class="form-control" id="field1">
+              </div>
+            </div>
+            
+            <div class="row fom-group">
+              <div class="col-12">
+                <label for="field2">Campo 2</label>
+                <input type="text" class="form-control" id="field2">
+              </div>
+            </div>
+            
+            <div class="row fom-group">
+              <div class="col-12">
+                <label for="field3">Campo 3</label>
+                <input type="text" class="form-control" id="field3">
+              </div>
+            </div>
+
+            <div class="row form-group">
+              <div class="col-12">
+                <button class="btn btn-block btn-primary" type="button">Guardar</button>
+              </div>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+
+    </ddr-detail>
+
+  </div>
+</div>
+
+  </div>
+
+  <div code>
+    <ddr-tabs>
+      <ddr-tab-item title="HTML">
+        <pre><code class="language-markup" pCode ngNonBindable>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-12&quot;&gt;
+
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-12 subtitle-ddr&quot;&gt;
+        &lt;span&gt;Ejemplo 1: Estandar&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-12&quot;&gt;
+        &lt;button class=&quot;btn btn-primary&quot; (click)=&quot;openDetailEx1()&quot;&gt;Abrir&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class=&quot;row mt-3&quot;&gt;
+      &lt;div class=&quot;col-12 subtitle-ddr&quot;&gt;
+        &lt;span&gt;Ejemplo 2: Sin titulo&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-12&quot;&gt;
+        &lt;button class=&quot;btn btn-primary&quot; (click)=&quot;openDetailEx2()&quot;&gt;Abrir&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class=&quot;row mt-3&quot;&gt;
+      &lt;div class=&quot;col-12 subtitle-ddr&quot;&gt;
+        &lt;span&gt;Ejemplo 3: Sin overlay&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-12&quot;&gt;
+        &lt;button class=&quot;btn btn-primary&quot; (click)=&quot;openDetailEx3()&quot;&gt;Abrir&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;ddr-detail [showOverlay]=&quot;showOverlay&quot; [showTitle]=&quot;showTitle&quot; *ngIf=&quot;showDetail&quot; (close)=&quot;closeDetail()&quot;&gt;
+
+      &lt;h1 detail-title&gt;Detalle ejemplo&lt;/h1&gt;
+
+      &lt;div class=&quot;row&quot; detail-content&gt;
+        &lt;div class=&quot;col-12&quot;&gt;
+
+          &lt;form&gt;
+
+            &lt;div class=&quot;row fom-group&quot;&gt;
+              &lt;div class=&quot;col-12&quot;&gt;
+                &lt;label for=&quot;field1&quot;&gt;Campo 1&lt;/label&gt;
+                &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;field1&quot;&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class=&quot;row fom-group&quot;&gt;
+              &lt;div class=&quot;col-12&quot;&gt;
+                &lt;label for=&quot;field2&quot;&gt;Campo 2&lt;/label&gt;
+                &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;field2&quot;&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;div class=&quot;row fom-group&quot;&gt;
+              &lt;div class=&quot;col-12&quot;&gt;
+                &lt;label for=&quot;field3&quot;&gt;Campo 3&lt;/label&gt;
+                &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;field3&quot;&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;row form-group&quot;&gt;
+              &lt;div class=&quot;col-12&quot;&gt;
+                &lt;button class=&quot;btn btn-block btn-primary&quot; type=&quot;button&quot;&gt;Guardar&lt;/button&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+
+          &lt;/form&gt;
+
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+    &lt;/ddr-detail&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </ddr-tab-item>
+      
+      <ddr-tab-item title="CSS">
+        <pre><code class="language-css" pCode ngNonBindable></code></pre>
+      </ddr-tab-item>
+      
+      <ddr-tab-item title="TS">
+        <pre><code class="language-typescript" pCode ngNonBindable>import &#123; DdrCacheService &#125; from './../../services/ddr-cache.service';
+import &#123; Component, OnInit &#125; from '@angular/core';
+
+@Component(&#123;
+  selector: 'app-showcase-ddr-detail',
+  templateUrl: './showcase-ddr-detail.component.html',
+  styleUrls: ['./showcase-ddr-detail.component.scss']
+&#125;)
+export class ShowcaseDdrDetailComponent implements OnInit &#123;
+
+  public showDetail: boolean;
+  public showTitle: boolean;
+  public showOverlay: boolean;
+
+  constructor(private ddrCache: DdrCacheService) &#123; 
+    this.ddrCache.setElement('title', 'Detail');
+    this.showOverlay = true;
+    this.showTitle = true;
+  &#125;
+
+  ngOnInit() &#123;
+  &#125;
+
+  closeDetail()&#123;
+    this.showDetail = false;
+  &#125;
+
+  openDetailEx1()&#123;
+    this.showOverlay = true;
+    this.showTitle = true;
+    this.showDetail = true;
+  &#125;
+
+  openDetailEx2()&#123;
+    this.showOverlay = true;
+    this.showTitle = false;
+    this.showDetail = true;
+  &#125;
+
+  openDetailEx3()&#123;
+    this.showOverlay = false;
+    this.showTitle = true;
+    this.showDetail = true;
+  &#125;
+
+&#125;</code></pre>
+      </ddr-tab-item>
+    </ddr-tabs>
+  </div>
+
+  <div class="scrollable" inputs>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Tipo</th>
+          <th>Valor por defecto</th>
+          <th>Posibles valores</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>showTitle</td>
+          <td>Indica si queremos mostrar el bloque del titulo del detalle.</td>
+          <td>boolean</td>
+          <td>true</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>clickOutsideEnabled</td>
+          <td>Indica si queremos activar la directiva click outside del detalle.</td>
+          <td>boolean</td>
+          <td>true</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>showOverlay</td>
+          <td>Indica si queremos mostrar el overlay del detalle.</td>
+          <td>boolean</td>
+          <td>true</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="scrollable" outputs>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Valor devuelto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>close</td>
+          <td>Evento al cerrar el detalle</td>
+          <td>boolean</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</base-showcase>

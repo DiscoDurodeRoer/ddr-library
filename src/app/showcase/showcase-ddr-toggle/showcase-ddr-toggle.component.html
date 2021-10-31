@@ -1,0 +1,202 @@
+<base-showcase>
+
+  <div examples>
+
+<div class="row">
+  <div class="col-12">
+
+    <div class="row">
+      <div class="col-12 subtitle-ddr">
+        <span>Ejemplo 1: Estandar</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <ddr-toggle
+          (toggled)="changeToggle($event)">
+        </ddr-toggle>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 subtitle-ddr">
+        <span>Ejemplo 2: Label</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <ddr-toggle
+          label="Toggle"
+          (toggled)="changeToggle($event)">
+        </ddr-toggle>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-12 subtitle-ddr">
+        <span>Ejemplo 3: NgModel</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <ddr-toggle
+          label="Toggle"
+          [(ngModel)]="valueEx3"
+          (toggled)="changeToggle($event)">
+        </ddr-toggle>
+        <div>
+          <span>{{'Value: '+valueEx3}}</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+  </div>
+
+  <div code>
+    <ddr-tabs>
+      <ddr-tab-item title="HTML">
+        <pre><code class="language-markup" pCode ngNonBindable>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-12&quot;&gt;
+
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-12 subtitle-ddr&quot;&gt;
+        &lt;span&gt;Ejemplo 1: Estandar&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-12&quot;&gt;
+        &lt;ddr-toggle
+          (toggled)=&quot;changeToggle($event)&quot;&gt;
+        &lt;/ddr-toggle&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-12 subtitle-ddr&quot;&gt;
+        &lt;span&gt;Ejemplo 2: Label&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-12&quot;&gt;
+        &lt;ddr-toggle
+          label=&quot;Toggle&quot;
+          (toggled)=&quot;changeToggle($event)&quot;&gt;
+        &lt;/ddr-toggle&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-12 subtitle-ddr&quot;&gt;
+        &lt;span&gt;Ejemplo 3: NgModel&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-12&quot;&gt;
+        &lt;ddr-toggle
+          label=&quot;Toggle&quot;
+          [(ngModel)]=&quot;valueEx3&quot;
+          (toggled)=&quot;changeToggle($event)&quot;&gt;
+        &lt;/ddr-toggle&gt;
+        &lt;div&gt;
+          &lt;span&gt;{{'Value: '+valueEx3}}&lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </ddr-tab-item>
+      
+      <ddr-tab-item title="CSS">
+        <pre><code class="language-css" pCode ngNonBindable></code></pre>
+      </ddr-tab-item>
+      
+      <ddr-tab-item title="TS">
+        <pre><code class="language-typescript" pCode ngNonBindable>import &#123; DdrToastService &#125; from 'ddr-library';
+import &#123; DdrCacheService &#125; from './../../services/ddr-cache.service';
+import &#123; Component &#125; from '@angular/core';
+
+@Component(&#123;
+  selector: 'app-showcase-ddr-toggle',
+  templateUrl: './showcase-ddr-toggle.component.html',
+  styleUrls: ['./showcase-ddr-toggle.component.scss']
+&#125;)
+export class ShowcaseDdrToggleComponent &#123;
+
+  public valueEx3: boolean;
+
+  constructor(
+    private ddrCache: DdrCacheService,
+    private ddrToast: DdrToastService
+  ) &#123;
+    this.valueEx3 = true;
+    this.ddrCache.setElement('title', 'Toggle');
+  &#125;
+
+  changeToggle($event) &#123;
+    if($event)&#123;
+      this.ddrToast.addSuccessMessage("Exito", "El toggle se ha activado");
+    &#125;else&#123;
+      this.ddrToast.addSuccessMessage("Exito", "El toggle se ha desactivado");
+    &#125;
+  &#125;
+
+&#125;</code></pre>
+      </ddr-tab-item>
+    </ddr-tabs>
+  </div>
+
+  <div class="scrollable" inputs>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Tipo</th>
+          <th>Valor por defecto</th>
+          <th>Posibles valores</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>label</td>
+          <td>Texto del toggle</td>
+          <td>string</td>
+          <td>undenfined</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="scrollable" outputs>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Valor devuelto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>toggled</td>
+          <td>Evento al cambiar el toggle</td>
+          <td>boolean</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</base-showcase>

@@ -1,0 +1,119 @@
+<div class="ddr-menu row no-gutters vh-100">
+  <div class="col-12">
+
+    <div class="sidebar">
+
+      <div class="logo">
+        <img (click)="clickLogo()" src="./assets/img/logo.png" alt="">
+      </div>
+      
+      <div class="mt-3" (click)="openCloseMenu()">
+        <img src="./assets/img/book-menu.png" alt="">
+      </div>
+
+      <div class="mt-3">
+        <a href="https://github.com/" target="_blank">
+          <img src="./assets/img/github.png" alt="">
+        </a>
+      </div>
+      
+      <div class="logo-twitter">
+        <a href="https://twitter.com/discoduroderoer" target="_blank">
+          <img src="./assets/img/twitter.png" alt="">
+        </a>
+      </div>
+      
+      <div class="logo-theme" (click)="openTheme()">
+        <img src="./assets/img/theme.png" alt="">
+      </div>
+      
+      <div class="logo-npm">
+        <a href="https://www.npmjs.com/package/ddr-library" target="_blank">
+          <img src="./assets/img/npm.png" alt="">
+        </a>
+      </div>
+
+    </div>
+
+    <div class="main">
+
+      <div class="main-bar">
+        <span>{{ddrCache.getElement('title')}}</span>
+      </div>
+
+      <div class="main-content" #main>
+        <ng-content select="[content]"></ng-content>
+
+        <ddr-detail *ngIf="showMenuItems"
+          [showOverlay]="false" 
+          [showTitle]="false" 
+          class="detail-menu-items">
+
+          <div detail-content class="row menu-items">
+            <div class="col-12">
+
+              <div class="row no-gutters">
+                <div class="col-12 mb-2">
+
+                  <div class="input-group">
+                    <input type="text" 
+                      class="form-control" 
+                      name="search" 
+                      id="search" 
+                      (keyup)="filterMenuItems($event)">
+                    <div class="input-group-append">
+                      <button>
+                        <i class="fa fa-search"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="row no-gutters mt-3" *ngIf="menuItemsFiltered.length > 0">
+                    <div class="col-12" *ngFor="let mg of menuItemsFiltered">
+                      <span>{{mg.text}}</span>
+
+                      <div class="row no-gutters">
+                        <div class="col-md-2 col-sm-3 col-6" (click)="goToRoute(mi.route)" *ngFor="let mi of mg.children">
+                          <div class="menu-item">
+                            <span>{{mi.text}}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="row no-gutters mt-3" *ngIf="menuItemsFiltered.length == 0">
+                    <span>No hay resultados</span>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </ddr-detail>
+
+      </div>
+
+    </div>
+
+
+  </div>
+</div>
+
+<ddr-modal id="modal-theme"
+  [type]="constants.DdrModalTypeConstants.NO_BUTTONS">
+  <div modal-title>Elige tu theme</div>
+  <div modal-content>
+    <ddr-dropdown 
+      [options]="themes" 
+      (selectItem)="changeTheme($event)">
+      
+      <ng-template itemTemplate let-item="item">
+        {{item.label}}
+      </ng-template>
+    
+    </ddr-dropdown>
+  </div>
+</ddr-modal>

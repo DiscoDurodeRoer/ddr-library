@@ -8,6 +8,9 @@
       "schematics": {
         "@schematics/angular:application": {
           "strict": true
+        },
+        "@schematics/angular:component": {
+          "style": "scss"
         }
       },
       "root": "",
@@ -24,12 +27,23 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              { "glob": "**/*", "input": "node_modules/ddr-library/resources/img", "output": "resources/img/"}
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/font-awesome/css/font-awesome.min.css",
+              "node_modules/ddr-library/resources/scss/font.scss",
+              "node_modules/ddr-library/resources/scss/ddr-styles.scss",
+              "node_modules/ddr-library/resources/themes/theme-default.scss",
+              "node_modules/ddr-library/resources/themes/theme-dark.scss",
+              "node_modules/prismjs/themes/prism.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/prismjs/prism.js",
+              "node_modules/prismjs/components/prism-typescript.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -97,6 +111,73 @@
               "src/styles.css"
             ],
             "scripts": []
+          }
+        }
+      }
+    },
+    "ddr-example": {
+      "projectType": "library",
+      "root": "projects/ddr-example",
+      "sourceRoot": "projects/ddr-example/src",
+      "prefix": "ddr",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ddr-example/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ddr-example/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ddr-example/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ddr-example/src/test.ts",
+            "tsConfig": "projects/ddr-example/tsconfig.spec.json",
+            "karmaConfig": "projects/ddr-example/karma.conf.js"
+          }
+        }
+      }
+    },
+    "ddr-library": {
+      "projectType": "library",
+      "root": "projects/ddr-library",
+      "sourceRoot": "projects/ddr-library/src",
+      "prefix": "lib",
+      "schematics": {
+        "@schematics/angular:component": {
+           "style": "scss"
+         }
+       },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ddr-library/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ddr-library/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ddr-library/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ddr-library/src/test.ts",
+            "tsConfig": "projects/ddr-library/tsconfig.spec.json",
+            "karmaConfig": "projects/ddr-library/karma.conf.js"
           }
         }
       }

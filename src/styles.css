@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body {
+    height: 100%;
+}
+
+html body {
+    overflow: hidden;
+}
+
+.title-ddr{
+    font-size: 32px;
+    font-family: 'ddr bold';
+    font-weight: bold;
+}
+
+.subtitle-ddr{
+    font-size: 24px;
+    font-family: 'ddr bold';
+    font-weight: bold;
+}
+
+
+.scrollable {
+    overflow-x: auto;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    list-style: none;
+}

@@ -1,0 +1,109 @@
+{
+    "variable1": "variable1",
+    "variable2": "variable2",
+    "showElement": true,
+    "variable3": {
+        "subvariable1": "soy un valor anidado"
+    },
+    "values": [
+        {
+            "label": "label1",
+            "value": "value1"
+        },
+        {
+            "label": "label2",
+            "value": "value2"
+        },
+        {
+            "label": "label3",
+            "value": "value3"
+        }
+    ],
+    "menuItems": [
+        {
+            "text": "Utilidades",
+            "children": [
+                {
+                    "text": "Config",
+                    "route": "/ddr-config"
+                },
+                {
+                    "text": "Resolution",
+                    "route": "/ddr-resolution"
+                },
+                {
+                    "text": "Translate",
+                    "route": "/ddr-translate"
+                },
+                {
+                    "text": "Spinner",
+                    "route": "/ddr-spinner"
+                },
+                {
+                    "text": "Toast",
+                    "route": "/ddr-toast"
+                }
+            ]
+        },
+        {
+            "text": "Formularios",
+            "children": [
+                {
+                    "text": "Dropdown",
+                    "route": "/ddr-dropdown"
+                },
+                {
+                    "text": "Toggle",
+                    "route": "/ddr-toggle"
+                }
+            ]
+        },
+        {
+            "text": "Contenedores",
+            "children": [
+                {
+                    "text": "Accordion",
+                    "route": "/ddr-accordion"
+                },
+                {
+                    "text": "Detail",
+                    "route": "/ddr-detail"
+                },
+                {
+                    "text": "Block list",
+                    "route": "/ddr-block-list"
+                },
+                {
+                    "text": "Modal",
+                    "route": "/ddr-modal"
+                },
+                {
+                    "text": "Tabs",
+                    "route": "/ddr-tabs"
+                }
+            ]
+        },
+        {
+            "text": "Pipes",
+            "children": [
+                {
+                    "text": "Join pipe",
+                    "route": "/ddr-join"
+                }
+            ]
+        },
+        {
+            "text": "Directivas",
+            "children": [
+                {
+                    "text": "ClickOutside",
+                    "route": "/ddr-click-outside"
+                },
+                {
+                    "text": "Load Iframe",
+                    "route": "/ddr-load-iframe"
+                }
+            ]
+        }
+    ]
+}

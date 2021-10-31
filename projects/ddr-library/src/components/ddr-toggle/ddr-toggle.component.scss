@@ -1,0 +1,50 @@
+.ddr-toggle{
+    
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+
+    &__label{
+        text-transform: uppercase;
+    }
+
+    &__btn{
+        display: inline-block;
+        width: 60px;
+        height: 30px;
+        position: relative;
+        cursor: pointer;
+        border-radius: 20px;
+        padding: 2px;
+        border: none;
+
+        &::after{
+            content: '';
+            display: block;
+            position: relative;
+            width: 50%;
+            height: 100%;
+            border-radius: 20px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+              padding 0.3s ease, margin 0.3s ease;
+        }
+
+        &--on{
+            background: #28a745;
+
+            &::after{
+                left: 50%;
+            }
+        }
+
+        &--off{
+            background: #afafafaf;
+            
+            &::after{
+                left: 0;
+            }
+        }
+
+    }
+
+}

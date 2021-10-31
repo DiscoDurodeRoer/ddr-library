@@ -1,0 +1,172 @@
+<base-showcase [showOutputs]="false">
+
+  <div examples>
+
+    <div class="row">
+      <div class="col-12">
+
+        <div class="row">
+          <div class="col-12 subtitle-ddr">
+            <span>Ejemplo 1: Estandar</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <button class="btn btn-primary" (click)="showSpinnerEx1()">Activar spinner</button>
+            <ddr-spinner *ngIf="!embedded"></ddr-spinner>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col-12 subtitle-ddr">
+            <span>Ejemplo 2: Embebido</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <button class="btn btn-primary" (click)="showSpinnerEx2()">Activar spinner</button>
+            
+            <div class="embedded">
+
+              <ddr-spinner *ngIf="embedded" [embedded]="true"></ddr-spinner>
+
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi rerum beatae exercitationem neque autem eveniet, molestiae nostrum velit possimus harum at doloribus iure. Ad sint esse dolore sunt, adipisci sed?</p>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div code>
+    <ddr-tabs>
+      <ddr-tab-item title="HTML">
+        <pre><code class="language-markup" pCode ngNonBindable>&lt;div class=&quot;row&quot;&gt;
+&lt;div class=&quot;col-12&quot;&gt;
+
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-12 subtitle-ddr&quot;&gt;
+      &lt;span&gt;Ejemplo 1: Estandar&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-12&quot;&gt;
+      &lt;button class=&quot;btn btn-primary&quot; (click)=&quot;showSpinnerEx1()&quot;&gt;Activar spinner&lt;/button&gt;
+      &lt;ddr-spinner *ngIf=&quot;!embedded&quot;&gt;&lt;/ddr-spinner&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;row mt-3&quot;&gt;
+    &lt;div class=&quot;col-12 subtitle-ddr&quot;&gt;
+      &lt;span&gt;Ejemplo 2: Embebido&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-12&quot;&gt;
+      &lt;button class=&quot;btn btn-primary&quot; (click)=&quot;showSpinnerEx2()&quot;&gt;Activar spinner&lt;/button&gt;
+      
+      &lt;div class=&quot;embedded&quot;&gt;
+
+        &lt;ddr-spinner *ngIf=&quot;embedded&quot; [embedded]=&quot;true&quot;&gt;&lt;/ddr-spinner&gt;
+
+        &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi rerum beatae exercitationem neque autem eveniet, molestiae nostrum velit possimus harum at doloribus iure. Ad sint esse dolore sunt, adipisci sed?&lt;/p&gt;
+
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </ddr-tab-item>
+      
+      <ddr-tab-item title="CSS">
+        <pre><code class="language-css" pCode ngNonBindable>.embedded&#123;
+          position: relative;
+          border: 1px solid #000;
+          width: 100%;
+          height: 400px;
+      &#125;</code></pre>
+      </ddr-tab-item>
+      
+      <ddr-tab-item title="TS">
+        <pre><code class="language-typescript" pCode ngNonBindable>import &#123; DdrCacheService &#125; from './../../services/ddr-cache.service';
+import &#123; DdrSpinnerService &#125; from 'ddr-library';
+import &#123; Component, OnInit &#125; from '@angular/core';
+
+@Component(&#123;
+  selector: 'app-showcase-ddr-spinner',
+  templateUrl: './showcase-ddr-spinner.component.html',
+  styleUrls: ['./showcase-ddr-spinner.component.css']
+&#125;)
+export class ShowcaseDdrSpinnerComponent &#123;
+
+  public embedded: boolean;
+
+  constructor(
+    public ddrSpinner: DdrSpinnerService,
+    private ddrCache: DdrCacheService
+  ) &#123; 
+    this.ddrCache.setElement('title', 'Spinner')
+    this.embedded = false;
+  &#125;
+
+  showSpinnerEx1()&#123;
+    this.embedded = false;
+    this.ddrSpinner.showSpinner();
+    setTimeout(() => &#123;
+      this.ddrSpinner.hideSpinner();
+    &#125;, 5000);
+  &#125;
+
+  showSpinnerEx2()&#123;
+    this.embedded = true;
+    this.ddrSpinner.showSpinner();
+    setTimeout(() => &#123;
+      this.ddrSpinner.hideSpinner();
+    &#125;, 5000);
+  &#125;
+
+
+&#125;</code></pre>
+      </ddr-tab-item>
+    </ddr-tabs>
+  </div>
+
+  <div class="scrollable" inputs>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Tipo</th>
+          <th>Valor por defecto</th>
+          <th>Posibles valores</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>embedded</td>
+          <td>Indica si el spinner esta embebido o no.</td>
+          <td>boolean</td>
+          <td>false</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>pathImg</td>
+          <td>Indica la ruta del spinner.</td>
+          <td>string</td>
+          <td>'resources/img/spinner.gif'</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</base-showcase>

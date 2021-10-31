@@ -1,0 +1,112 @@
+
+<base-showcase [showInputs]="false">
+
+  <div examples>
+
+    <div class="row">
+      <div class="col-12">
+
+        <div class="row">
+          <div class="col-12 subtitle-ddr">
+            <span>Ejemplo 1: Estandar</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+
+            <iframe src="https://www.discoduroderoer.es" ddrLoadIframe (loadIframe)="load()"></iframe>
+
+            <ddr-spinner></ddr-spinner>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div code>
+    <ddr-tabs>
+      <ddr-tab-item title="HTML">
+        <pre><code class="language-markup" pCode ngNonBindable>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-12&quot;&gt;
+
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-12 subtitle-ddr&quot;&gt;
+        &lt;span&gt;Ejemplo 1: Estandar&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-12&quot;&gt;
+
+        &lt;iframe src=&quot;https://www.discoduroderoer.es&quot; ddrLoadIframe (loadIframe)=&quot;load()&quot;&gt;&lt;/iframe&gt;
+
+        &lt;ddr-spinner&gt;&lt;/ddr-spinner&gt;
+
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </ddr-tab-item>
+      
+      <ddr-tab-item title="CSS">
+        <pre><code class="language-css" pCode ngNonBindable></code></pre>
+      </ddr-tab-item>
+      
+      <ddr-tab-item title="TS">
+        <pre><code class="language-typescript" pCode ngNonBindable>import &#123; DdrSpinnerService &#125; from 'ddr-library';
+import &#123; DdrToastService &#125; from 'ddr-library';
+import &#123; DdrCacheService &#125; from './../../services/ddr-cache.service';
+import &#123; Component, OnInit &#125; from '@angular/core';
+
+@Component(&#123;
+  selector: 'app-showcase-ddr-load-iframe',
+  templateUrl: './showcase-ddr-load-iframe.component.html',
+  styleUrls: ['./showcase-ddr-load-iframe.component.scss']
+&#125;)
+export class ShowcaseDdrLoadIframeComponent &#123;
+
+  constructor(
+    private ddrSpinner: DdrSpinnerService,
+    private ddrCache: DdrCacheService,
+    private ddrToast: DdrToastService
+  ) &#123; 
+    this.ddrCache.setElement('title', 'Load iframe');
+    this.ddrSpinner.showSpinner();
+  &#125;
+
+  load()&#123;
+    console.log("Iframe cargado");
+    this.ddrToast.addSuccessMessage("Exito", "Se ha cargado el iframe")
+    this.ddrSpinner.hideSpinner();
+  &#125;
+
+&#125;</code></pre>
+      </ddr-tab-item>
+    </ddr-tabs>
+  </div>
+
+  <div class="scrollable" outputs>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Valor devuelto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>loadIframe</td>
+          <td>Evento al cargar el iframe</td>
+          <td>boolean</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</base-showcase>

@@ -1,0 +1,131 @@
+
+$primary: #1F1F1F;
+$color-text: #FFF;
+$border-primary: 1px solid $color-text;
+$background: #1F1F1F;
+$selected: #aefff48c;
+$content: #121212;
+
+.theme-dark {
+
+    .theme-content{
+        background: $content;
+        color: $color-text;
+    }
+
+    ddr-tabs{
+        .ddr-tabs {
+            &__title {
+                color: $color-text;
+            }
+            &--selected {
+                border-bottom-color: $primary;
+            }
+        }
+    }
+
+    ddr-accordion{
+        .ddr-accordion{
+            &__title {
+                border: $border-primary;
+            }
+            &__content{
+                &--is-opened{
+                    border-left-color: $color-text;
+                    border-right-color: $color-text;
+                    border-bottom-color: $color-text;
+                }
+            }
+        }
+
+    }
+
+    ddr-detail {
+        .ddr-detail {
+            border: $border-primary;
+            background: $background;
+        }
+    }
+
+    ddr-dropdown{
+        .ddr-dropdown{
+
+            .form-control {
+                background: $background;
+                color: $color-text;
+            }
+
+            &__panel-items{
+                background: $background;
+                ul{
+                    li{
+                        &:hover {
+                            background: $selected;
+                        }
+                    }
+                }
+            }
+
+            .input-group-append i{
+                color: $color-text;
+            }
+        }
+    }
+
+    ddr-modal {
+        .ddr-modal {
+            background: $background;
+            
+            .card {
+                background: $background;
+            }
+        
+        }
+    }
+
+    ddr-toggle {
+        .ddr-toggle{
+            &__btn {
+                
+                &::after{
+                    background: $background;
+                }
+            }
+        }
+    }
+
+    ddr-block-list {
+
+
+        .ddr-block-list-item{
+
+            border: $border-primary;
+            background: $background;
+
+            &:hover{
+                background: $selected;
+            }
+
+            &__actions {
+                &--options-panel{        
+                    border: $border-primary;
+                    background: $background;
+
+                    li {
+                        &:hover{
+                            background: $selected;
+                        }
+                    }
+                }
+            }
+        }
+
+        .ddr-block-list-data{
+            &__value{
+                color: $color-text;
+            }
+        }
+
+    }
+
+}

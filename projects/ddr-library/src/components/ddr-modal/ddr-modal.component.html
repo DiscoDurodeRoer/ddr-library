@@ -1,0 +1,36 @@
+<div class="ddr-modal" *ngIf="show">
+  <div class="ddr-modal__content">
+
+    <div class="card" ddrClickOutside 
+      [avoidFirstTime]="true" 
+      [clickOutsideEnabled]="!forceClose" 
+      (clickOutside)="onclickOutside($event)">
+      <div class="card-title ddr-modal__content--title">
+        <ng-content select="[modal-title]"></ng-content>
+      </div>
+
+      <div class="card-body">
+        <ng-content select="[modal-content]"></ng-content>
+      </div>
+  
+      <div class="ddr-modal__content--card-buttons" *ngIf="type !== constants.DdrModalTypeConstants.NO_BUTTONS">
+  
+        <button *ngIf="type === constants.DdrModalTypeConstants.CONFIRM || type === constants.DdrModalTypeConstants.INFO"
+          (click)="onConfirm($event)"
+          class="btn btn-primary ddr-modal__content--card-buttons--button">
+          <i class="fa fa-check">{{labelConfirm}}</i>
+        </button>
+  
+        <button *ngIf="type === constants.DdrModalTypeConstants.CONFIRM"
+          (click)="onClose($event)"
+          class="btn btn-danger ddr-modal__content--card-buttons--button">
+          <i class="fa fa-times">{{labelClose}}</i>
+        </button>
+  
+      </div>
+    </div>
+   
+  </div>
+</div>
+
+<div class="ddr-overlay" *ngIf="show"></div>

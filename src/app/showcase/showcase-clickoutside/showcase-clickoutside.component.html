@@ -1,0 +1,281 @@
+<base-showcase>
+
+  <div examples>
+
+<div class="row">
+  <div class="col-12">
+
+    <div class="row">
+      <div class="col-12 subtitle-ddr">
+        <span>Ejemplo 1: Estandar</span>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <button  class="btn btn-primary" (click)="openEstandar()">Activar</button>
+      </div>
+    </div>
+    
+    <div class="row mt-3">
+      <div class="col-12 subtitle-ddr">
+        <span>Ejemplo 2: Delay</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <button  class="btn btn-primary" (click)="openDelay()">Activar</button>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-12 subtitle-ddr">
+        <span>Ejemplo 3: Desactivado</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <button class="btn btn-primary" (click)="openDesactived()">Activar</button>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-12 subtitle-ddr">
+        <span>Ejemplo 4: Evitar primera vez</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <button class="btn btn-primary" (click)="openAvoidFirstTime()">Activar</button>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+
+        {{'Modo: ' + mode}}
+
+        <div *ngIf="mode === 'estandar'" class="block" ddrClickOutside (clickOutside)="clickOutside($event)">
+          <p>Click outside</p>
+        </div>
+      
+        <div *ngIf="mode === 'delay'" class="block"  ddrClickOutside (clickOutside)="clickOutside($event)" [clickOutsideDelay]="5000">
+          <p>Click outside</p>
+        </div>
+      
+        <div *ngIf="mode === 'desactivated'" class="block"  ddrClickOutside (clickOutside)="clickOutside($event)" [clickOutsideEnabled]="false">
+          <p>Click outside</p>
+        </div>      
+
+        <div *ngIf="mode === 'avoid first time'" class="block"  ddrClickOutside (clickOutside)="clickOutside($event)" [avoidFirstTime]="true">
+          <p>Click outside</p>
+        </div>      
+
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+  </div>
+
+  <div code>
+    <ddr-tabs>
+      <ddr-tab-item title="HTML">
+        <pre><code class="language-markup" pCode ngNonBindable>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-12&quot;&gt;
+
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-12 subtitle-ddr&quot;&gt;
+        &lt;span&gt;Ejemplo 1: Estandar&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-12&quot;&gt;
+        &lt;button  class=&quot;btn btn-primary&quot; (click)=&quot;openEstandar()&quot;&gt;Activar&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class=&quot;row mt-3&quot;&gt;
+      &lt;div class=&quot;col-12 subtitle-ddr&quot;&gt;
+        &lt;span&gt;Ejemplo 2: Delay&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-12&quot;&gt;
+        &lt;button  class=&quot;btn btn-primary&quot; (click)=&quot;openDelay()&quot;&gt;Activar&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;row mt-3&quot;&gt;
+      &lt;div class=&quot;col-12 subtitle-ddr&quot;&gt;
+        &lt;span&gt;Ejemplo 3: Desactivado&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-12&quot;&gt;
+        &lt;button class=&quot;btn btn-primary&quot; (click)=&quot;openDesactived()&quot;&gt;Activar&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;row mt-3&quot;&gt;
+      &lt;div class=&quot;col-12 subtitle-ddr&quot;&gt;
+        &lt;span&gt;Ejemplo 4: Evitar primera vez&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-12&quot;&gt;
+        &lt;button class=&quot;btn btn-primary&quot; (click)=&quot;openAvoidFirstTime()&quot;&gt;Activar&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-12&quot;&gt;
+
+        {{'Modo: ' + mode}}
+
+        &lt;div *ngIf=&quot;mode === 'estandar'&quot; class=&quot;block&quot; ddrClickOutside (clickOutside)=&quot;clickOutside($event)&quot;&gt;
+          &lt;p&gt;Click outside&lt;/p&gt;
+        &lt;/div&gt;
+      
+        &lt;div *ngIf=&quot;mode === 'delay'&quot; class=&quot;block&quot;  ddrClickOutside (clickOutside)=&quot;clickOutside($event)&quot; [clickOutsideDelay]=&quot;5000&quot;&gt;
+          &lt;p&gt;Click outside&lt;/p&gt;
+        &lt;/div&gt;
+      
+        &lt;div *ngIf=&quot;mode === 'desactivated'&quot; class=&quot;block&quot;  ddrClickOutside (clickOutside)=&quot;clickOutside($event)&quot; [clickOutsideEnabled]=&quot;false&quot;&gt;
+          &lt;p&gt;Click outside&lt;/p&gt;
+        &lt;/div&gt;      
+
+        &lt;div *ngIf=&quot;mode === 'avoid first time'&quot; class=&quot;block&quot;  ddrClickOutside (clickOutside)=&quot;clickOutside($event)&quot; [avoidFirstTime]=&quot;true&quot;&gt;
+          &lt;p&gt;Click outside&lt;/p&gt;
+        &lt;/div&gt;      
+
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </ddr-tab-item>
+      
+      <ddr-tab-item title="CSS">
+        <pre><code class="language-css" pCode ngNonBindable>.block&#123;
+          width: 100px;
+          height: 100px;
+          border: 1px solid #000;   
+      &#125;</code></pre>
+      </ddr-tab-item>
+      
+      <ddr-tab-item title="TS">
+        <pre><code class="language-typescript" pCode ngNonBindable>import &#123; DdrToastService &#125; from './../../../../projects/ddr-library/src/components/ddr-toast/ddr-toast.service';
+import &#123; DdrCacheService &#125; from './../../services/ddr-cache.service';
+import &#123; Component &#125; from '@angular/core';
+
+@Component(&#123;
+  selector: 'app-showcase-clickoutside',
+  templateUrl: './showcase-clickoutside.component.html',
+  styleUrls: ['./showcase-clickoutside.component.scss']
+&#125;)
+export class ShowcaseClickoutsideComponent &#123;
+
+  public mode: string;
+
+  constructor(
+    private ddrToast: DdrToastService,
+    private ddrCache: DdrCacheService
+  ) &#123;
+    this.ddrCache.setElement('title', 'clickoutside');
+    this.mode = 'estandar';
+  &#125;
+
+  openEstandar() &#123;
+    this.mode = 'estandar';
+  &#125;
+
+  openDelay() &#123;
+    this.mode = 'delay';
+  &#125;
+
+  openDesactived() &#123;
+    this.mode = 'desactivated';
+  &#125;
+
+  openAvoidFirstTime() &#123;
+    this.mode = 'avoid first time';
+  &#125;
+
+  clickOutside($event) &#123;
+    console.log($event);
+    this.ddrToast.addInfoMessage("Exito", "Click fuera")
+  &#125;
+
+&#125;</code></pre>
+      </ddr-tab-item>
+    </ddr-tabs>
+  </div>
+
+  <div class="scrollable" inputs>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Tipo</th>
+          <th>Valor por defecto</th>
+          <th>Posibles valores</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>avoidFirstTime</td>
+          <td>Evita el primer intento de clicar fuera.</td>
+          <td>boolean</td>
+          <td>false</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>clickOutsideEnabled</td>
+          <td>Indica si esta activo o no el evento de clicar fuera.</td>
+          <td>boolean</td>
+          <td>true</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>clickOutsideDelay</td>
+          <td>Tiempo en mandar el evento de clicar fuera.</td>
+          <td>number</td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="scrollable" outputs>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Valor devuelto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>clickOutside</td>
+          <td>Evento al clicar fuera del elemento.</td>
+          <td>MouseEvent</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</base-showcase>

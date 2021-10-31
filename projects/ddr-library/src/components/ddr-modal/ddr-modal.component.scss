@@ -1,0 +1,39 @@
+.ddr-modal {
+
+    position: fixed;
+    z-index: 9999;
+    width: 50%;
+    left: 25vw;
+    top: 40vh;
+    border-radius: .25em;
+
+    .card {
+        -webkit-box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.75);
+        -moz-box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.75);
+        box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.75);
+    }
+
+    &__content{
+
+        &--title{
+            font-weight: 600;
+            text-decoration: underline;
+            text-align: center;
+            padding-top: 20px;
+
+        }
+
+        &--card-buttons {
+
+            margin-left: 5px;
+            padding-bottom: 20px;
+
+            &--button {
+
+                margin-left: 20px;
+            }
+        }
+    }
+
+
+}

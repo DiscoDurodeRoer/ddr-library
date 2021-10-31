@@ -1,0 +1,21 @@
+{
+  "name": "ddr-library",
+  "version": "12.16.2",
+  "peerDependencies": {
+    "@angular/common": "^12.2.0",
+    "@angular/core": "^12.2.0"
+  },
+  "author": {
+    "email": "administrador@discoduroderoer.es",
+    "name": "DiscoDurodeRoer",
+    "url": "https://www.discoduroderoer.es"
+  },
+  "description": "Biblioteca de componentes de disco duro de roer",
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "font-awesome": "^4.7.0",
+    "lodash-es": "^4.17.0",
+    "ngx-pagination": "^5.1.1",
+    "tslib": "^2.3.0"
+  }
+}

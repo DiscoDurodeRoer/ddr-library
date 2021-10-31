@@ -1,0 +1,105 @@
+<base-showcase [showOutputs]="false">
+
+  <div examples>
+
+    <div class="row">
+      <div class="col-12">
+
+        <ddr-tabs>
+          <ddr-tab-item title="Tab1">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni facere porro sit fugiat ad asperiores nihil facilis. Ea totam facere dolorum, fugiat, recusandae in commodi, quibusdam dolores amet architecto modi?
+          </ddr-tab-item>
+          <ddr-tab-item title="Tab2">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit repellat impedit, ratione enim in assumenda est deleniti nam provident ut. Ex assumenda ut laborum animi? Ratione voluptates ut officiis iure.
+            Dolorum, odio eaque molestias error assumenda qui sunt provident? Eos ducimus sit illo saepe ea debitis consequuntur reprehenderit dolore atque dolores beatae facilis, laboriosam sint? Sequi dolorum ab consectetur adipisci!
+          </ddr-tab-item>
+          <ddr-tab-item title="Tab3">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta cumque officiis dolore quas? Tempora quasi, modi optio iusto quisquam, autem cupiditate molestiae, veritatis possimus fugiat nobis debitis exercitationem quos aliquam.
+            Quo, aliquid voluptates sunt debitis esse voluptatum nisi, ipsa eveniet quas error quia. Necessitatibus iste atque nam dicta inventore dolor quaerat mollitia hic laborum eum veniam aliquam sapiente, repellendus provident?
+            Quod necessitatibus voluptate fugiat consequuntur enim! Mollitia ratione quisquam facere repellendus esse? Provident recusandae nobis aut corporis animi totam at, ratione, porro odit natus vitae fugiat maiores laboriosam aliquam facilis!
+          </ddr-tab-item>
+        </ddr-tabs>
+
+      </div>
+    </div>
+
+
+  </div>
+
+  <div code>
+    <ddr-tabs>
+      <ddr-tab-item title="HTML">
+        <pre><code class="language-markup" pCode ngNonBindable>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-12&quot;&gt;
+
+    &lt;ddr-tabs&gt;
+      &lt;ddr-tab-item title=&quot;Tab1&quot;&gt;
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni facere porro sit fugiat ad asperiores nihil facilis. Ea totam facere dolorum, fugiat, recusandae in commodi, quibusdam dolores amet architecto modi?
+      &lt;/ddr-tab-item&gt;
+      &lt;ddr-tab-item title=&quot;Tab2&quot;&gt;
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit repellat impedit, ratione enim in assumenda est deleniti nam provident ut. Ex assumenda ut laborum animi? Ratione voluptates ut officiis iure.
+        Dolorum, odio eaque molestias error assumenda qui sunt provident? Eos ducimus sit illo saepe ea debitis consequuntur reprehenderit dolore atque dolores beatae facilis, laboriosam sint? Sequi dolorum ab consectetur adipisci!
+      &lt;/ddr-tab-item&gt;
+      &lt;ddr-tab-item title=&quot;Tab3&quot;&gt;
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta cumque officiis dolore quas? Tempora quasi, modi optio iusto quisquam, autem cupiditate molestiae, veritatis possimus fugiat nobis debitis exercitationem quos aliquam.
+        Quo, aliquid voluptates sunt debitis esse voluptatum nisi, ipsa eveniet quas error quia. Necessitatibus iste atque nam dicta inventore dolor quaerat mollitia hic laborum eum veniam aliquam sapiente, repellendus provident?
+        Quod necessitatibus voluptate fugiat consequuntur enim! Mollitia ratione quisquam facere repellendus esse? Provident recusandae nobis aut corporis animi totam at, ratione, porro odit natus vitae fugiat maiores laboriosam aliquam facilis!
+      &lt;/ddr-tab-item&gt;
+    &lt;/ddr-tabs&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </ddr-tab-item>
+      
+      <ddr-tab-item title="CSS">
+        <pre><code class="language-css" pCode ngNonBindable></code></pre>
+      </ddr-tab-item>
+      
+      <ddr-tab-item title="TS">
+        <pre><code class="language-typescript" pCode ngNonBindable>import &#123; DdrCacheService &#125; from './../../services/ddr-cache.service';
+import &#123; Component, OnInit &#125; from '@angular/core';
+
+@Component(&#123;
+  selector: 'app-showcase-ddr-tabs',
+  templateUrl: './showcase-ddr-tabs.component.html',
+  styleUrls: ['./showcase-ddr-tabs.component.scss']
+&#125;)
+export class ShowcaseDdrTabsComponent&#123;
+
+  constructor(private ddrCache: DdrCacheService) &#123; 
+    this.ddrCache.setElement('title', 'Tabs');
+  &#125;
+
+&#125;</code></pre>
+      </ddr-tab-item>
+    </ddr-tabs>
+  </div>
+
+  <div class="scrollable" inputs>
+
+    <span class="subtitle-ddr">ddr-tab-item</span>
+
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Tipo</th>
+          <th>Valor por defecto</th>
+          <th>Posibles valores</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>title</td>
+          <td>Indica el nombre del tab.</td>
+          <td>string</td>
+          <td>undefined</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</base-showcase>
+

@@ -1,0 +1,204 @@
+<base-showcase>
+
+  <div examples>
+
+<div class="row">
+  <div class="col-12">
+
+    <div class="row">
+      <div class="col-12 subtitle-ddr">
+        <span>Ejemplo 1: Abierto desde el principio</span>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-12">
+        <ddr-accordion [title]="'Accordion 1'" [open]="true" (clickOpen)="openAccordionEx1($event)">
+          <div content-accordion>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit earum optio tempore doloribus unde, fuga id ipsam magni nihil quia provident architecto qui repellat facilis culpa fugiat, libero alias dignissimos?
+            Aliquam earum modi enim voluptas quasi unde quis facilis asperiores officia a, sed iste nam nulla consectetur, obcaecati molestiae molestias voluptatem optio porro numquam odit. Animi in provident omnis ipsum?
+            Dolorum, explicabo ipsa! Pariatur ad, fugiat, esse adipisci repellat illum minima omnis consequatur dolorum quia eos eveniet. Amet sit corrupti quasi omnis magnam, commodi voluptates, facilis qui ratione excepturi perferendis!
+            Sapiente adipisci suscipit animi nihil, ab natus aperiam nemo et blanditiis quis modi qui neque nostrum sed saepe architecto quo facilis pariatur repellendus atque a consectetur ipsum officiis? Magnam, minima.
+            In rem molestiae nobis officiis nam, vero id asperiores? Dolorum ut maxime, ipsa eius error nam suscipit ducimus ratione dolores delectus eligendi odio quidem perspiciatis dolore quo doloribus aperiam et?
+            Dolorem ipsum adipisci, sequi in architecto saepe suscipit ab voluptatem assumenda eum non quo temporibus earum debitis possimus reprehenderit incidunt culpa itaque. Quisquam porro saepe, qui sequi repellendus consectetur magnam.
+            Ex error itaque similique maxime incidunt, corporis, quam culpa tempora repellendus architecto harum? Et quibusdam veniam dolores velit ab consectetur voluptatum. Vitae sequi quibusdam distinctio, modi voluptatibus sapiente praesentium libero.
+            Non fuga amet nihil eveniet iusto. Quis inventore itaque deleniti repudiandae vitae sed debitis accusantium qui voluptates, quas dolores quos delectus esse ullam? Debitis reiciendis iure distinctio suscipit porro ullam.
+            Rem, aspernatur. Impedit totam commodi iure, nostrum autem minus excepturi doloremque. Tempore a tempora ex, exercitationem fugit accusantium temporibus deserunt debitis! Voluptatem minus expedita esse totam tenetur earum error cumque!
+            Expedita minus sapiente sint harum maiores eius sit laborum, eligendi odio quo dicta facilis asperiores accusantium, voluptate necessitatibus voluptas quibusdam dolor. Inventore mollitia itaque, consequuntur minus quam totam unde tenetur!
+          </div>
+        </ddr-accordion>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-12 subtitle-ddr">
+        <span>Ejemplo 2: Estandar</span>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-12">
+        <ddr-accordion [title]="'Accordion 2'" (clickOpen)="openAccordionEx2($event)">
+          <div content-accordion>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum quod, qui ullam est, rerum vitae laudantium enim fugit officiis possimus accusamus quos dolor, ex quidem accusantium architecto! Esse, molestiae sint.
+            Tenetur eum necessitatibus modi, nesciunt aliquid repellendus. Alias natus repellendus necessitatibus cum nulla quam nemo animi! Distinctio autem neque est sit delectus atque maxime minima, laudantium accusamus debitis sunt. Nostrum!
+            Officiis, dolor iusto! Autem, dolorum dignissimos! Ratione minus provident nemo placeat. Atque maiores laborum excepturi rem fuga libero dignissimos saepe, voluptates aspernatur expedita modi exercitationem ab, laudantium dolorum laboriosam dolor.
+            Numquam enim expedita soluta blanditiis magni sapiente molestiae asperiores laboriosam voluptatem veniam non consectetur vel fuga error, repellendus cumque obcaecati fugit fugiat saepe voluptatibus esse illum voluptatum ipsum ipsa. Nam.
+            Pariatur cum minus placeat dolor praesentium odio mollitia, modi, rerum quas sed voluptates! Aperiam inventore error commodi sit fuga facere aliquam voluptates magni odit. In inventore adipisci doloremque modi beatae.
+          </div>
+        </ddr-accordion>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+  </div>
+
+  <div code>
+    <ddr-tabs>
+      <ddr-tab-item title="HTML">
+        <pre><code class="language-markup" pCode ngNonBindable>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-12&quot;&gt;
+
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-12 subtitle-ddr&quot;&gt;
+        &lt;span&gt;Ejemplo 1: Abierto desde el principio&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;row mt-3&quot;&gt;
+      &lt;div class=&quot;col-12&quot;&gt;
+        &lt;ddr-accordion [title]=&quot;'Accordion 1'&quot; [open]=&quot;true&quot; (clickOpen)=&quot;openAccordionEx1($event)&quot;&gt;
+          &lt;div content-accordion&gt;
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit earum optio tempore doloribus unde, fuga id ipsam magni nihil quia provident architecto qui repellat facilis culpa fugiat, libero alias dignissimos?
+            Aliquam earum modi enim voluptas quasi unde quis facilis asperiores officia a, sed iste nam nulla consectetur, obcaecati molestiae molestias voluptatem optio porro numquam odit. Animi in provident omnis ipsum?
+            Dolorum, explicabo ipsa! Pariatur ad, fugiat, esse adipisci repellat illum minima omnis consequatur dolorum quia eos eveniet. Amet sit corrupti quasi omnis magnam, commodi voluptates, facilis qui ratione excepturi perferendis!
+            Sapiente adipisci suscipit animi nihil, ab natus aperiam nemo et blanditiis quis modi qui neque nostrum sed saepe architecto quo facilis pariatur repellendus atque a consectetur ipsum officiis? Magnam, minima.
+            In rem molestiae nobis officiis nam, vero id asperiores? Dolorum ut maxime, ipsa eius error nam suscipit ducimus ratione dolores delectus eligendi odio quidem perspiciatis dolore quo doloribus aperiam et?
+            Dolorem ipsum adipisci, sequi in architecto saepe suscipit ab voluptatem assumenda eum non quo temporibus earum debitis possimus reprehenderit incidunt culpa itaque. Quisquam porro saepe, qui sequi repellendus consectetur magnam.
+            Ex error itaque similique maxime incidunt, corporis, quam culpa tempora repellendus architecto harum? Et quibusdam veniam dolores velit ab consectetur voluptatum. Vitae sequi quibusdam distinctio, modi voluptatibus sapiente praesentium libero.
+            Non fuga amet nihil eveniet iusto. Quis inventore itaque deleniti repudiandae vitae sed debitis accusantium qui voluptates, quas dolores quos delectus esse ullam? Debitis reiciendis iure distinctio suscipit porro ullam.
+            Rem, aspernatur. Impedit totam commodi iure, nostrum autem minus excepturi doloremque. Tempore a tempora ex, exercitationem fugit accusantium temporibus deserunt debitis! Voluptatem minus expedita esse totam tenetur earum error cumque!
+            Expedita minus sapiente sint harum maiores eius sit laborum, eligendi odio quo dicta facilis asperiores accusantium, voluptate necessitatibus voluptas quibusdam dolor. Inventore mollitia itaque, consequuntur minus quam totam unde tenetur!
+          &lt;/div&gt;
+        &lt;/ddr-accordion&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;row mt-3&quot;&gt;
+      &lt;div class=&quot;col-12 subtitle-ddr&quot;&gt;
+        &lt;span&gt;Ejemplo 2: Estandar&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;row mt-3&quot;&gt;
+      &lt;div class=&quot;col-12&quot;&gt;
+        &lt;ddr-accordion [title]=&quot;'Accordion 2'&quot; (clickOpen)=&quot;openAccordionEx2($event)&quot;&gt;
+          &lt;div content-accordion&gt;
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum quod, qui ullam est, rerum vitae laudantium enim fugit officiis possimus accusamus quos dolor, ex quidem accusantium architecto! Esse, molestiae sint.
+            Tenetur eum necessitatibus modi, nesciunt aliquid repellendus. Alias natus repellendus necessitatibus cum nulla quam nemo animi! Distinctio autem neque est sit delectus atque maxime minima, laudantium accusamus debitis sunt. Nostrum!
+            Officiis, dolor iusto! Autem, dolorum dignissimos! Ratione minus provident nemo placeat. Atque maiores laborum excepturi rem fuga libero dignissimos saepe, voluptates aspernatur expedita modi exercitationem ab, laudantium dolorum laboriosam dolor.
+            Numquam enim expedita soluta blanditiis magni sapiente molestiae asperiores laboriosam voluptatem veniam non consectetur vel fuga error, repellendus cumque obcaecati fugit fugiat saepe voluptatibus esse illum voluptatum ipsum ipsa. Nam.
+            Pariatur cum minus placeat dolor praesentium odio mollitia, modi, rerum quas sed voluptates! Aperiam inventore error commodi sit fuga facere aliquam voluptates magni odit. In inventore adipisci doloremque modi beatae.
+          &lt;/div&gt;
+        &lt;/ddr-accordion&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </ddr-tab-item>
+      
+      <ddr-tab-item title="CSS">
+        <pre><code class="language-css" pCode ngNonBindable></code></pre>
+      </ddr-tab-item>
+      
+      <ddr-tab-item title="TS">
+        <pre><code class="language-typescript" pCode ngNonBindable>import &#123; DdrToastService &#125; from 'ddr-library';
+import &#123; DdrCacheService &#125; from './../../services/ddr-cache.service';
+import &#123; Component &#125; from '@angular/core';
+
+@Component(&#123;
+  selector: 'app-showcase-accordion',
+  templateUrl: './showcase-accordion.component.html',
+  styleUrls: ['./showcase-accordion.component.scss']
+&#125;)
+export class ShowcaseAccordionComponent  &#123;
+
+  constructor(
+    public ddrCache: DdrCacheService,
+    public ddrToastService: DdrToastService
+  ) &#123; &#125;
+
+  openAccordionEx1($event)&#123;
+    if($event)&#123;
+      this.ddrToastService.addSuccessMessage("Exito", "Abriendo el acordeon 1");
+    &#125;else&#123;
+      this.ddrToastService.addSuccessMessage("Exito", "Cerrando el acordeon 1");
+    &#125;
+  &#125;
+
+  openAccordionEx2($event)&#123;
+    if($event)&#123;
+      this.ddrToastService.addSuccessMessage("Exito", "Abriendo el acordeon 1");
+    &#125;else&#123;
+      this.ddrToastService.addSuccessMessage("Exito", "Cerrando el acordeon 1");
+    &#125;
+  &#125;
+
+&#125;</code></pre>
+      </ddr-tab-item>
+    </ddr-tabs>
+  </div>
+
+  <div class="scrollable" inputs>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Tipo</th>
+          <th>Valor por defecto</th>
+          <th>Posibles valores</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>title</td>
+          <td>Titulo del acordeon</td>
+          <td>string</td>
+          <td>undefined</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>open</td>
+          <td>Indica si abrir el acordion</td>
+          <td>boolean</td>
+          <td>false</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="scrollable" outputs>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Valor devuelto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>clickOpen</td>
+          <td>Evento al cerrar o abrir el acordeon</td>
+          <td>boolean</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</base-showcase>

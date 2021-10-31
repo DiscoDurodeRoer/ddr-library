@@ -1,0 +1,63 @@
+.ddr-accordion{
+
+    border-radius: 4px;
+    margin-bottom: 10px;
+    -webkit-box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.75);
+    box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.75);
+
+    &__title{
+        padding: 5px;
+        border-radius: 4px;
+        cursor: pointer;
+
+        &--text{
+            font-size: 24px;
+        }
+
+        &--icon {
+            font-size: 22px;
+            margin-right: 10px;
+            margin-top: 5px;
+        }        
+
+        &--is-opened {
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+        }
+        
+        &--is-closed {
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+        }
+
+    }
+
+    &__content{
+
+        &--is-opened {
+            padding: 10px;
+            border-top: none;
+            border-radius: 4px;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            overflow: inherit;
+
+            border-left-width: 1px;
+            border-left-style: solid;
+            border-right-width: 1px;
+            border-right-style: solid;
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+        }
+
+        &--is-closed {
+            padding: 0;
+            border: none;
+            overflow: hidden;
+        }
+
+        
+
+    }
+}

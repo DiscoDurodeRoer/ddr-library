@@ -1,0 +1,337 @@
+<base-showcase>
+
+  <div examples>
+
+<div class="row">
+  <div class="col-12">
+
+    <div class="row">
+      <div class="col-12 subtitle-ddr">
+        <span>Ejemplo 1: Modal de confirmacion</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <button class="btn btn-primary" (click)="clickConfirm()">Mostrar modal</button>
+      </div>
+    </div>
+    
+    <div class="row mt-3">
+      <div class="col-12 subtitle-ddr">
+        <span>Ejemplo 2: Modal de informacion</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <button class="btn btn-primary" (click)="clickInfo()">Mostrar modal</button>
+      </div>
+    </div>
+    
+    <div class="row mt-3">
+      <div class="col-12 subtitle-ddr">
+        <span>Ejemplo 3: Modal sin botones</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <button class="btn btn-primary" (click)="clickNoButtons()">Mostrar modal</button>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-12 subtitle-ddr">
+        <span>Ejemplo 4: Forzar cierre</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <button class="btn btn-primary" (click)="clickForceClose()">Mostrar modal</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<ddr-modal id="confirm"
+  [type]="constants.DdrModalTypeConstants.CONFIRM"
+  [labelConfirm]="'label.confirm' | ddrTranslate"
+  [labelClose]="'label.close' | ddrTranslate"
+  (accept)="acceptModal()"
+  (close)="closeModal()">
+  <div modal-title>Titulo</div>
+  <div modal-content>Contenido</div>
+</ddr-modal>
+
+<ddr-modal id="info"
+  [type]="constants.DdrModalTypeConstants.INFO"
+  [labelConfirm]="'label.confirm' | ddrTranslate"
+  [labelClose]="'label.close' | ddrTranslate"
+  (accept)="acceptModal()"
+  (close)="closeModal()">
+  <div modal-title>Titulo</div>
+  <div modal-content>Contenido</div>
+</ddr-modal>
+
+<ddr-modal id="no-buttons"
+  [type]="constants.DdrModalTypeConstants.NO_BUTTONS"
+  [labelConfirm]="'label.confirm' | ddrTranslate"
+  [labelClose]="'label.close' | ddrTranslate"
+  (accept)="acceptModal()"
+  (close)="closeModal()">
+  <div modal-title>Titulo</div>
+  <div modal-content>Contenido</div>
+</ddr-modal>
+
+<ddr-modal id="force-close"
+  [type]="constants.DdrModalTypeConstants.INFO"
+  [labelConfirm]="'label.confirm' | ddrTranslate"
+  [labelClose]="'label.close' | ddrTranslate"
+  [forceClose]="true"
+  (accept)="acceptModal()"
+  (close)="closeModal()">
+  <div modal-title>Titulo</div>
+  <div modal-content>Contenido</div>
+</ddr-modal>
+
+  </div>
+
+  <div code>
+    <ddr-tabs>
+      <ddr-tab-item title="HTML">
+        <pre><code class="language-markup" pCode ngNonBindable>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-12&quot;&gt;
+
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-12 subtitle-ddr&quot;&gt;
+        &lt;span&gt;Ejemplo 1: Modal de confirmacion&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-12&quot;&gt;
+        &lt;button class=&quot;btn btn-primary&quot; (click)=&quot;clickConfirm()&quot;&gt;Mostrar modal&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class=&quot;row mt-3&quot;&gt;
+      &lt;div class=&quot;col-12 subtitle-ddr&quot;&gt;
+        &lt;span&gt;Ejemplo 2: Modal de informacion&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-12&quot;&gt;
+        &lt;button class=&quot;btn btn-primary&quot; (click)=&quot;clickInfo()&quot;&gt;Mostrar modal&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class=&quot;row mt-3&quot;&gt;
+      &lt;div class=&quot;col-12 subtitle-ddr&quot;&gt;
+        &lt;span&gt;Ejemplo 3: Modal sin botones&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-12&quot;&gt;
+        &lt;button class=&quot;btn btn-primary&quot; (click)=&quot;clickNoButtons()&quot;&gt;Mostrar modal&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;row mt-3&quot;&gt;
+      &lt;div class=&quot;col-12 subtitle-ddr&quot;&gt;
+        &lt;span&gt;Ejemplo 4: Forzar cierre&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-12&quot;&gt;
+        &lt;button class=&quot;btn btn-primary&quot; (click)=&quot;clickForceClose()&quot;&gt;Mostrar modal&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;ddr-modal id=&quot;confirm&quot;
+  [type]=&quot;constants.DdrModalTypeConstants.CONFIRM&quot;
+  [labelConfirm]=&quot;'label.confirm' | ddrTranslate&quot;
+  [labelClose]=&quot;'label.close' | ddrTranslate&quot;
+  (accept)=&quot;acceptModal()&quot;
+  (close)=&quot;closeModal()&quot;&gt;
+  &lt;div modal-title&gt;Titulo&lt;/div&gt;
+  &lt;div modal-content&gt;Contenido&lt;/div&gt;
+&lt;/ddr-modal&gt;
+
+&lt;ddr-modal id=&quot;info&quot;
+  [type]=&quot;constants.DdrModalTypeConstants.INFO&quot;
+  [labelConfirm]=&quot;'label.confirm' | ddrTranslate&quot;
+  [labelClose]=&quot;'label.close' | ddrTranslate&quot;
+  (accept)=&quot;acceptModal()&quot;
+  (close)=&quot;closeModal()&quot;&gt;
+  &lt;div modal-title&gt;Titulo&lt;/div&gt;
+  &lt;div modal-content&gt;Contenido&lt;/div&gt;
+&lt;/ddr-modal&gt;
+
+&lt;ddr-modal id=&quot;no-buttons&quot;
+  [type]=&quot;constants.DdrModalTypeConstants.NO_BUTTONS&quot;
+  [labelConfirm]=&quot;'label.confirm' | ddrTranslate&quot;
+  [labelClose]=&quot;'label.close' | ddrTranslate&quot;
+  (accept)=&quot;acceptModal()&quot;
+  (close)=&quot;closeModal()&quot;&gt;
+  &lt;div modal-title&gt;Titulo&lt;/div&gt;
+  &lt;div modal-content&gt;Contenido&lt;/div&gt;
+&lt;/ddr-modal&gt;
+
+&lt;ddr-modal id=&quot;force-close&quot;
+  [type]=&quot;constants.DdrModalTypeConstants.INFO&quot;
+  [labelConfirm]=&quot;'label.confirm' | ddrTranslate&quot;
+  [labelClose]=&quot;'label.close' | ddrTranslate&quot;
+  [forceClose]=&quot;true&quot;
+  (accept)=&quot;acceptModal()&quot;
+  (close)=&quot;closeModal()&quot;&gt;
+  &lt;div modal-title&gt;Titulo&lt;/div&gt;
+  &lt;div modal-content&gt;Contenido&lt;/div&gt;
+&lt;/ddr-modal&gt;</code></pre>
+      </ddr-tab-item>
+      
+      <ddr-tab-item title="CSS">
+        <pre><code class="language-css" pCode ngNonBindable></code></pre>
+      </ddr-tab-item>
+      
+      <ddr-tab-item title="TS">
+        <pre><code class="language-typescript" pCode ngNonBindable>import &#123; DdrToastService &#125; from 'ddr-library';
+import &#123; DdrCacheService &#125; from './../../services/ddr-cache.service';
+import &#123; DdrModalService &#125; from 'ddr-library';
+import &#123; DdrConstantsService &#125; from 'ddr-library';
+import &#123; Component &#125; from '@angular/core';
+
+@Component(&#123;
+  selector: 'app-showcase-ddr-modal',
+  templateUrl: './showcase-ddr-modal.component.html',
+  styleUrls: ['./showcase-ddr-modal.component.scss']
+&#125;)
+export class ShowcaseDdrModalComponent &#123;
+
+  constructor(
+    public constants: DdrConstantsService,
+    private ddrModal: DdrModalService,
+    private ddrCache: DdrCacheService,
+    private ddrToast: DdrToastService
+  ) &#123; 
+    this.ddrCache.setElement('title', 'Modal');
+  &#125;
+
+  clickConfirm()&#123;
+    this.ddrModal.open("confirm");
+  &#125;
+
+  clickInfo()&#123;
+    this.ddrModal.open("info");
+  &#125;
+
+  clickNoButtons()&#123;
+    this.ddrModal.open("no-buttons");
+  &#125;
+
+  clickForceClose()&#123;
+    this.ddrModal.open("force-close");
+  &#125;
+
+  acceptModal()&#123;
+    this.ddrToast.addSuccessMessage("Exito", "Se ha clicado en aceptar");
+  &#125;
+
+  closeModal()&#123;
+    this.ddrToast.addSuccessMessage("Exito", "Se ha clicado en cerrar");
+  &#125;
+&#125;</code></pre>
+      </ddr-tab-item>
+    </ddr-tabs>
+  </div>
+
+  <div class="scrollable" inputs>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Tipo</th>
+          <th>Valor por defecto</th>
+          <th>Posibles valores</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>id</td>
+          <td>Id del modal. Obligatorio</td>
+          <td>string</td>
+          <td>undefined</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>type</td>
+          <td>Tipo de modal</td>
+          <td>string</td>
+          <td>DdrModalTypeConstants.INFO</td>
+          <td>
+            <ul>
+              <li>DdrModalTypeConstants.INFO</li>
+              <li>DdrModalTypeConstants.CONFIRM</li>
+              <li>DdrModalTypeConstants.NO_BUTTONS</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>labelConfirm</td>
+          <td>Label para el boton de confirmar</td>
+          <td>string</td>
+          <td>undefined</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>labelClose</td>
+          <td>Label para el boton de cerrar</td>
+          <td>string</td>
+          <td>undefined</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>forceClose</td>
+          <td>Indica si fuerza el cierre a clickar un boton.</td>
+          <td>boolean</td>
+          <td>false</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="scrollable" outputs>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Valor devuelto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>close</td>
+          <td>Evento al cerrar el modal</td>
+          <td>MouseEvent</td>
+        </tr>
+        <tr>
+          <td>accept</td>
+          <td>Evento al clicar el boton de aceptar</td>
+          <td>MouseEvent</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</base-showcase>

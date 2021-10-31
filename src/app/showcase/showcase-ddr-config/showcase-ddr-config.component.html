@@ -1,0 +1,186 @@
+<base-showcase [showInputs]="false" [showOutputs]="false">
+
+  <div examples>
+
+<div class="row">
+  <div class="col-12">
+
+    <div class="row">
+      <div class="col-12 subtitle-ddr">
+        <span>Ejemplo 1: Recoger un valor simple</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        {{'variable1' | ddrConfig}}
+      </div>
+    </div>
+    
+    <div class="row mt-3">
+      <div class="col-12 subtitle-ddr">
+        <span>Ejemplo 2: Recoger valor anidado</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        {{'variable3.subvariable1' | ddrConfig}}
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-12 subtitle-ddr">
+        <span>Ejemplo 3: Mostrar un valor segun un estado</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <p *ngIf="'showElement' | ddrConfig">
+          Me puedo mostrar
+        </p>
+      </div>
+    </div>
+
+    
+    <div class="row mt-3">
+      <div class="col-12 subtitle-ddr">
+        <span>Ejemplo 4: Mostrando varios valores</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <p *ngFor="let item of ('values' | ddrConfig)">
+          {{item.label + ' - ' + item.value}}
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+  </div>
+
+  <div code>
+    <ddr-tabs>
+      <ddr-tab-item title="HTML">
+        <pre><code class="language-markup" pCode ngNonBindable>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-12&quot;&gt;
+
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-12 subtitle-ddr&quot;&gt;
+        &lt;span&gt;Ejemplo 1: Recoger un valor simple&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-12&quot;&gt;
+        {{'variable1' | ddrConfig}}
+      &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class=&quot;row mt-3&quot;&gt;
+      &lt;div class=&quot;col-12 subtitle-ddr&quot;&gt;
+        &lt;span&gt;Ejemplo 2: Recoger valor anidado&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-12&quot;&gt;
+        {{'variable3.subvariable1' | ddrConfig}}
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;row mt-3&quot;&gt;
+      &lt;div class=&quot;col-12 subtitle-ddr&quot;&gt;
+        &lt;span&gt;Ejemplo 3: Mostrar un valor segun un estado&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-12&quot;&gt;
+        &lt;p *ngIf=&quot;'showElement' | ddrConfig&quot;&gt;
+          Me puedo mostrar
+        &lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    
+    &lt;div class=&quot;row mt-3&quot;&gt;
+      &lt;div class=&quot;col-12 subtitle-ddr&quot;&gt;
+        &lt;span&gt;Ejemplo 4: Mostrando varios valores&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-12&quot;&gt;
+        &lt;p *ngFor=&quot;let item of ('values' | ddrConfig)&quot;&gt;
+          {{item.label + ' - ' + item.value}}
+        &lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+        </code></pre>
+      </ddr-tab-item>
+      
+      <ddr-tab-item title="CSS">
+        <pre><code class="language-css" pCode ngNonBindable></code></pre>
+      </ddr-tab-item>
+      
+      <ddr-tab-item title="TS">
+        -- Showcase
+        <pre><code class="language-typescript" pCode ngNonBindable>import &#123; DdrConfigService &#125; from 'ddr-library';
+import &#123; Component &#125; from '@angular/core';
+
+@Component(&#123;
+  selector: 'app-showcase-ddr-config',
+  templateUrl: './showcase-ddr-config.component.html',
+  styleUrls: ['./showcase-ddr-config.component.scss']
+&#125;)
+export class ShowcaseDdrConfigComponent &#123;
+
+  constructor(private ddrConfig: DdrConfigService) &#123;
+    console.log(this.ddrConfig.getAllData());
+    console.log(this.ddrConfig.getData('variable2'));
+  &#125;
+
+&#125;</code></pre>
+
+          -- app.module
+          <pre><code class="language-typescript" pCode ngNonBindable>import &#123; DdrConfigService &#125; from 'ddr-library';
+import &#123;BrowserAnimationsModule&#125; from '@angular/platform-browser/animations';
+import &#123; APP_INITIALIZER, NgModule &#125; from '@angular/core';
+import &#123; BrowserModule &#125; from '@angular/platform-browser';
+import &#123; DdrLibraryModule &#125; from 'ddr-library';
+
+export function configFactory(provider: DdrConfigService)&#123;
+  return () => provider.getDataFromJSON('assets/config/data.json');
+&#125;
+
+@NgModule(&#123;
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    DdrLibraryModule
+  ],
+  providers: [
+    DdrConfigService,
+    &#123;
+      provide: APP_INITIALIZER,
+      useFactory: configFactory,
+      deps:[DdrConfigService],
+      multi: true
+    &#125;
+  ],
+  bootstrap: [AppComponent]
+&#125;)
+export class AppModule &#123; &#125;</code></pre>
+      </ddr-tab-item>
+    </ddr-tabs>
+  </div>
+
+</base-showcase>

@@ -3,9 +3,23 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
+    "paths": {
+      "ddr": [
+        "dist/ddr/ddr",
+        "dist/ddr"
+      ],
+      "ddr-example": [
+        "dist/ddr-example/ddr-example",
+        "dist/ddr-example"
+      ],
+      "ddr-library": [
+        "dist/ddr-library/ddr-library",
+        "dist/ddr-library"
+      ]
+    },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
+    "strict": false,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,

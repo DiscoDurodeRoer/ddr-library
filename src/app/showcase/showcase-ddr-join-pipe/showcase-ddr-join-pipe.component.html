@@ -1,0 +1,126 @@
+<base-showcase [showInputs]="false" [showOutputs]="false">
+
+  <div examples>
+
+    <div class="row">
+      <div class="col-12">
+
+        <div class="row">
+          <div class="col-12 subtitle-ddr">
+            <span>Ejemplo 1: array nulo</span>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-12">
+            {{ valoresNulo | join }}    
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col-12 subtitle-ddr">
+            <span>Ejemplo 2: array nulo</span>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-12">
+            {{ valores | join }}
+         </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col-12 subtitle-ddr">
+            <span>Ejemplo 3: Valores separados con | </span>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-12">
+            {{ valores | join: '|' }}
+         </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div code>
+
+    <ddr-tabs>
+      <ddr-tab-item title="HTML">
+        <pre><code class="language-markup" pCode ngNonBindable>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-12&quot;&gt;
+
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-12 subtitle-ddr&quot;&gt;
+        &lt;span&gt;Ejemplo 1: array nulo&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-12&quot;&gt;
+        &#123;&#123; valoresNulo | join &#125;&#125;    
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;row mt-3&quot;&gt;
+      &lt;div class=&quot;col-12 subtitle-ddr&quot;&gt;
+        &lt;span&gt;Ejemplo 2: array nulo&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-12&quot;&gt;
+        &#123;&#123; valores | join &#125;&#125;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;row mt-3&quot;&gt;
+      &lt;div class=&quot;col-12 subtitle-ddr&quot;&gt;
+        &lt;span&gt;Ejemplo 3: Valores separados con | &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-12&quot;&gt;
+        &#123;&#123; valores | join: '|' &#125;&#125;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </ddr-tab-item>
+      <ddr-tab-item title="CSS">
+        <pre><code class="language-css" pCode ngNonBindable></code></pre>
+      </ddr-tab-item>
+      <ddr-tab-item title="TS">
+        <pre><code class="language-typescript" pCode ngNonBindable>import &#123; Component &#125; from '@angular/core';
+
+@Component(&#123;
+  selector: 'app-showcase-ddr-join-pipe',
+  templateUrl: './showcase-ddr-join-pipe.component.html',
+  styleUrls: ['./showcase-ddr-join-pipe.component.css']
+&#125;)
+export class ShowcaseDdrJoinPipeComponent &#123;
+
+  public valoresNulo = null;
+  public valores: string[];
+
+  constructor(
+    private ddrCache: DdrCacheService
+  ) &#123;
+    this.ddrCache.setElement('title', 'Join pipe');
+    this.valores = [
+      "1", "2", "3", "4", "5"
+    ];
+  &#125;
+
+&#125;</code></pre>
+      </ddr-tab-item>
+    </ddr-tabs>
+
+  </div>
+
+</base-showcase>
+

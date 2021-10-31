@@ -1,0 +1,67 @@
+.ddr-dropdown {
+
+    min-width: 100px;
+    position: relative;
+
+    .form-control[readonly] {
+        cursor: pointer;
+    }
+
+    button {
+        height: 100%;
+        width: 32px;
+        background-color: transparent;
+        border-color: transparent;
+        position: absolute;
+        right: 0px;
+        z-index: 999;
+    }
+
+    input {
+        outline: 0px;
+        border-radius: 0px;
+    }
+
+    input:focus {
+        outline: 0px !important;
+        -webkit-appearance: none;
+        box-shadow: none !important;
+    }
+
+    &__panel-items{
+        position: absolute;
+        width: 100%;
+        z-index: 9999;
+        
+        &--search{
+        }
+
+        &--no-results{
+            padding: 5px;
+            border: 1px solid #c8c8c8;
+            font-size: 11px;
+            font-style: italic;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            max-height: 200px;
+            overflow: auto;
+            border: 1px solid #c8c8c8;
+            border-top: 0;
+        
+            li {
+                list-style: none;
+                cursor: pointer;
+                padding: 5px;
+
+            }
+        }
+    }
+
+    .input-group-append{
+        margin-left: 0px;
+    }
+
+}

@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-12">
+
+    <ddr-accordion [title]="'Ejemplos'" [open]="true" *ngIf="showExamples">
+      <ng-content select="[examples]" content-accordion></ng-content>
+    </ddr-accordion>
+    
+    <ddr-accordion [title]="'Código'" [open]="true" *ngIf="showCode">
+      <ng-content select="[code]" content-accordion></ng-content>
+    </ddr-accordion>
+    
+    <ddr-accordion [title]="'Inputs'" [open]="true" *ngIf="showInputs">
+      <ng-content select="[inputs]" content-accordion></ng-content>
+    </ddr-accordion>
+    
+    <ddr-accordion [title]="'Outputs'" [open]="true" *ngIf="showOutputs">
+      <ng-content select="[outputs]" content-accordion></ng-content>
+    </ddr-accordion>
+
+
+  </div>
+</div>

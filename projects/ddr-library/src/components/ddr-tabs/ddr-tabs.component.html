@@ -1,0 +1,14 @@
+<div class="ddr-tabs">
+
+  <div *ngFor="let tab of tabsItems" 
+      class="ddr-tabs__title"
+      (click)="open(tab)"
+      [ngClass]="{'ddr-tabs__title--selected': tab.selected}">
+    <span>{{tab.title}}</span>
+  </div>
+
+  <div class="ddr-tabs__content" *ngIf="contentTemplate">
+    <ng-template *ngTemplateOutlet="contentTemplate"></ng-template>
+  </div>
+
+</div>

@@ -1,0 +1,38 @@
+.ddr-toast{
+
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 99999;
+
+    &__container{
+
+        width: 300px;
+        padding: 5px;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        border: 1px solid #c8c8c8;
+
+        &--content{
+            padding: 5px 0px;
+            font-size: 14px;
+        }
+
+        &--title{
+            padding-bottom: 5px;
+            border-bottom: 1px solid #FFF; 
+        }
+
+        &--title--message {
+            width: 270px;
+            display: inline-block;
+            font-size: 18px;
+        }
+
+        &--title--close-toast {
+            cursor: pointer;
+            position: absolute;
+            font-size: 20px;
+        }
+    }
+}

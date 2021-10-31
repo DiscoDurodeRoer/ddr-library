@@ -1,0 +1,28 @@
+.ddr-detail {
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 15px;
+    z-index: 9999;
+    height: 100%;
+
+    &__close {
+        font-size: 26px;
+        cursor: pointer;
+        margin-right: 5px;
+    }
+
+}
+
+@media (min-width: 992px) {
+    .ddr-detail{
+        width: 40%;
+    }
+}
+
+@media (max-width: 992px) {
+    .ddr-detail{
+        width: 100%;
+    }
+}

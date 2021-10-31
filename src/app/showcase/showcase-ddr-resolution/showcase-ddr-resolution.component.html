@@ -1,0 +1,82 @@
+<base-showcase [showInputs]="false" [showOutputs]="false">
+
+  <div examples>
+
+<div class="row">
+  <div class="col-12">
+
+    <p>Redimensiona la pantalla para cambiar el modo</p>
+
+    <p>Debes añadir la directiva <b>ddrResolution</b> a un contenedor padre.</p>
+
+    <div *ngIf="ddrResolution.size === ddrConstants.DdrResolutionConstants.MOBILE">
+      Modo Mobile
+    </div>
+    <div *ngIf="ddrResolution.size === ddrConstants.DdrResolutionConstants.TABLET">
+      Modo Tablet
+    </div>
+    <div *ngIf="ddrResolution.size === ddrConstants.DdrResolutionConstants.WEB">
+      Modo Web
+    </div>
+
+  </div>
+</div>
+
+  </div>
+
+  <div code>
+    <ddr-tabs>
+      <ddr-tab-item title="HTML">
+        <pre><code class="language-markup" pCode ngNonBindable>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-12&quot;&gt;
+
+    &lt;p&gt;Redimensiona la pantalla para cambiar el modo&lt;/p&gt;
+
+    &lt;p&gt;Debes añadir la directiva &lt;b&gt;ddrResolution&lt;b&gt; a un contenedor padre.&lt;/p&gt;
+
+    &lt;div *ngIf=&quot;ddrResolution.size === ddrConstants.DdrResolutionConstants.MOBILE&quot;&gt;
+      Modo Mobile
+    &lt;/div&gt;
+    &lt;div *ngIf=&quot;ddrResolution.size === ddrConstants.DdrResolutionConstants.TABLET&quot;&gt;
+      Modo Tablet
+    &lt;/div&gt;
+    &lt;div *ngIf=&quot;ddrResolution.size === ddrConstants.DdrResolutionConstants.WEB&quot;&gt;
+      Modo Web
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </ddr-tab-item>
+      
+      <ddr-tab-item title="CSS">
+        <pre><code class="language-css" pCode ngNonBindable></code></pre>
+      </ddr-tab-item>
+      
+      <ddr-tab-item title="TS">
+        
+        <pre><code class="language-typescript" pCode ngNonBindable>import &#123; DdrCacheService &#125; from './../../services/ddr-cache.service';
+import &#123; DdrConstantsService &#125; from 'ddr-library';
+import &#123; DdrResolutionService &#125; from 'ddr-library';
+import &#123; Component, OnInit &#125; from '@angular/core';
+
+@Component(&#123;
+  selector: 'app-showcase-ddr-resolution',
+  templateUrl: './showcase-ddr-resolution.component.html',
+  styleUrls: ['./showcase-ddr-resolution.component.scss']
+&#125;)
+export class ShowcaseDdrResolutionComponent &#123;
+
+  constructor(
+    public ddrResolution: DdrResolutionService,
+    public ddrConstants: DdrConstantsService,
+    private ddrCache: DdrCacheService
+  ) &#123; 
+    this.ddrCache.setElement('title', 'Resolution');
+  &#125;
+
+&#125;</code></pre>
+      </ddr-tab-item>
+    </ddr-tabs>
+  </div>
+
+</base-showcase>

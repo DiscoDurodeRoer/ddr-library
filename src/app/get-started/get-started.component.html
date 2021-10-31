@@ -1,0 +1,84 @@
+<div class="row">
+  <div class="col-12">
+
+    <div class="row">
+      <div class="col-12 title-ddr">
+        <span>¿Qué es la biblioteca de componentes DdrLibrary?</span>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <span>Es un conjunto de componentes/servicios/pipes/directivas reutilizables para tus proyectos.</span>
+      </div>
+    </div>
+
+    
+    <div class="row mt-3">
+      <div class="col-12 title-ddr">
+        <span>Como instalar la biblioteca DdrLibrary</span>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <span>Para instalar la biblioteca DdrLibrary, ejecutar el siguiente comando:</span>
+        <pre><code class="language-markup" ngNonbindable pCode>npm i ddr-library</code></pre>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-12 title-ddr">
+        <span>¿Que debemos añadir en el fichero angular.json?</span>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <span>Añadiremos lo siguiente en assets:</span>
+        <pre><code class="language-markup" ngNonbindable pCode>&#123; &quot;glob&quot;: &quot;**/*&quot;, &quot;input&quot;: &quot;node_modules/ddr-library/resources/img&quot;, &quot;output&quot;: &quot;resources/img/&quot;&#125;</code></pre>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <span>Añadiremos lo siguiente en styles:</span>
+        <pre><code class="language-markup" ngNonbindable pCode>"node_modules/bootstrap/dist/css/bootstrap.min.css",
+"node_modules/font-awesome/css/font-awesome.min.css",
+"node_modules/ddr-library/resources/scss/font.scss",
+"node_modules/ddr-library/resources/scss/ddr-styles.scss",
+"node_modules/ddr-library/resources/themes/theme-default.scss",
+"node_modules/ddr-library/resources/themes/theme-dark.scss"
+        </code></pre>
+      </div>
+    </div>
+    
+    <div class="row mt-3">
+      <div class="col-12 title-ddr">
+        <span>¿Que agregar en app.module?</span>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <span>Añadiremos lo siguiente en app.module:</span>
+        <pre><code class="language-typescript" ngNonbindable pCode>import &#123;BrowserAnimationsModule&#125; from '@angular/platform-browser/animations';
+import &#123; DdrLibraryModule &#125; from 'ddr-library';
+
+@NgModule(&#123;
+  imports: [
+    BrowserAnimationsModule,
+    DdrLibraryModule
+  ],
+  bootstrap: [AppComponent]
+&#125;)
+export class AppModule &#123; &#125;</code></pre>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+
+

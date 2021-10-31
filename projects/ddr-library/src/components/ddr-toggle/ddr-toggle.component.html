@@ -1,0 +1,10 @@
+<div class="ddr-toggle">
+  <div class="ddr-toggle__label" *ngIf="label">
+    <label>{{label}}</label>
+  </div>
+  <button class="ddr-toggle__btn"
+    [ngClass]="{'ddr-toggle__btn--on': value, 'ddr-toggle__btn--off': !value}"
+    (click)="onClick()">
+
+  </button>
+</div> 

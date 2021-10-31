@@ -1,0 +1,15 @@
+.ddr-block-list-data{
+
+    display: inline-block;
+    margin-right: 10px;
+
+    &__label{
+        color: #c8c8c8;
+        font-size: 14px;
+    }
+
+    &__value{
+        font-size: 12px;
+    }
+
+}

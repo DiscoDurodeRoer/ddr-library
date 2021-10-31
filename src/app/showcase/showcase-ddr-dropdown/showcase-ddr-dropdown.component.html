@@ -1,0 +1,272 @@
+<base-showcase>
+
+  <div examples>
+
+<div class="row">
+  <div class="col-12">
+
+    <div class="row">
+      <div class="col-12 subtitle-ddr">
+        <span>Ejemplo 1: Estandar</span>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <ddr-dropdown 
+          [options]="options" 
+          (selectItem)="select($event)">
+        </ddr-dropdown>
+      </div>
+    </div>
+    
+    <div class="row mt-3">
+      <div class="col-12 subtitle-ddr">
+        <span>Ejemplo 2: NgModel</span>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <ddr-dropdown 
+        [options]="options" 
+        [(ngModel)]="valueEx2" 
+        (selectItem)="select($event)">
+    
+      </ddr-dropdown>
+
+      <span>{{'Value: ' + valueEx2}}</span>
+      </div>
+    </div>
+    
+    <div class="row mt-3">
+      <div class="col-12 subtitle-ddr">
+        <span>Ejemplo 3: Template</span>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <ddr-dropdown 
+          [options]="options" 
+          [(ngModel)]="valueEx3" 
+          (selectItem)="select($event)">
+      
+          <ng-template itemTemplate let-item="item">
+            {{item.label + " - " + item.value}}
+          </ng-template>
+      
+        </ddr-dropdown>
+
+        
+        <span>{{'Value: ' + valueEx3}}</span>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-12 subtitle-ddr">
+        <span>Ejemplo 4: Sin resultados</span>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <ddr-dropdown 
+          [options]="[]" 
+          [labelNoResults]="'No hay resultados'">
+      
+          <ng-template itemTemplate let-item="item">
+            {{item.label + " - " + item.value}}
+          </ng-template>
+      
+        </ddr-dropdown>
+
+      
+      </div>
+    </div>
+
+  </div>
+</div>
+    
+  </div>
+
+  <div code>
+    <ddr-tabs>
+      <ddr-tab-item title="HTML">
+        <pre><code class="language-markup" pCode ngNonBindable>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-12&quot;&gt;
+
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-12 subtitle-ddr&quot;&gt;
+        &lt;span&gt;Ejemplo 1: Estandar&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-12&quot;&gt;
+        &lt;ddr-dropdown [options]=&quot;options&quot; (selectItem)=&quot;select($event)&quot;&gt;
+        &lt;/ddr-dropdown&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class=&quot;row mt-3&quot;&gt;
+      &lt;div class=&quot;col-12 subtitle-ddr&quot;&gt;
+        &lt;span&gt;Ejemplo 2: NgModel&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-12&quot;&gt;
+        &lt;ddr-dropdown [options]=&quot;options&quot; [(ngModel)]=&quot;valueEx2&quot; (selectItem)=&quot;select($event)&quot;&gt;
+      
+        &lt;/ddr-dropdown&gt;
+
+        &lt;span&gt;{{'Value: ' + valueEx2}}&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class=&quot;row mt-3&quot;&gt;
+      &lt;div class=&quot;col-12 subtitle-ddr&quot;&gt;
+        &lt;span&gt;Ejemplo 3: Template&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-12&quot;&gt;
+        &lt;ddr-dropdown [options]=&quot;options&quot; [(ngModel)]=&quot;valueEx3&quot; (selectItem)=&quot;select($event)&quot;&gt;
+      
+          &lt;ng-template itemTemplate let-item=&quot;item&quot;&gt;
+            {{item.label + &quot; - &quot; + item.value}}
+          &lt;/ng-template&gt;
+      
+        &lt;/ddr-dropdown&gt;
+
+        
+        &lt;span&gt;{{'Value: ' + valueEx3}}&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;row mt-3&quot;&gt;
+      &lt;div class=&quot;col-12 subtitle-ddr&quot;&gt;
+        &lt;span&gt;Ejemplo 4: Sin resultados&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-12&quot;&gt;
+        &lt;ddr-dropdown [options]=&quot;[]&quot; [labelNoResults]=&quot;'No hay resultados'&quot;&gt;
+      
+          &lt;ng-template itemTemplate let-item=&quot;item&quot;&gt;
+            {{item.label + &quot; - &quot; + item.value}}
+          &lt;/ng-template&gt;
+      
+        &lt;/ddr-dropdown&gt;
+
+      
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </ddr-tab-item>
+      
+      <ddr-tab-item title="CSS">
+        <pre><code class="language-css" pCode ngNonBindable></code></pre>
+      </ddr-tab-item>
+      
+      <ddr-tab-item title="TS">
+        <pre><code class="language-typescript" pCode ngNonBindable>import &#123; DdrCacheService &#125; from './../../services/ddr-cache.service';
+import &#123; DdrToastService &#125; from 'ddr-library';
+import &#123; DdrSelectItem &#125; from 'ddr-library';
+import &#123; Component, OnInit &#125; from '@angular/core';
+
+@Component(&#123;
+  selector: 'app-showcase-ddr-dropdown',
+  templateUrl: './showcase-ddr-dropdown.component.html',
+  styleUrls: ['./showcase-ddr-dropdown.component.scss']
+&#125;)
+export class ShowcaseDdrDropdownComponent implements OnInit &#123;
+
+  public options: DdrSelectItem[];
+  public valueEx2: any;
+  public valueEx3: any;
+
+  constructor(
+    private ddrToast: DdrToastService,
+    private ddrCache: DdrCacheService
+  ) &#123; 
+    this.ddrCache.setElement('title', 'Dropdown')
+  &#125;
+
+  ngOnInit() &#123;
+    this.options = [
+      new DdrSelectItem("Label1", "Value1"),
+      new DdrSelectItem("Label2", "Value2"),
+      new DdrSelectItem("Label3", "Value3"),
+      new DdrSelectItem("Label4", "Value4"),
+    ];
+
+    this.valueEx2 = "Value3";
+    this.valueEx3 = "Value3";
+  &#125;
+
+  select($event)&#123;
+    console.log($event);
+    this.ddrToast.addInfoMessage("Exito", "Has elegido: " + JSON.stringify($event))
+  &#125;
+
+&#125;</code></pre>
+      </ddr-tab-item>
+    </ddr-tabs>
+  </div>
+
+  <div class="scrollable" inputs>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Tipo</th>
+          <th>Valor por defecto</th>
+          <th>Posibles valores</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>options</td>
+          <td>Opciones a mostrar.</td>
+          <td>DdrSelectItem[]</td>
+          <td>[]</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>labelNoResults</td>
+          <td>Label cuando no hay elementos.</td>
+          <td>string</td>
+          <td>No results</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="scrollable" outputs>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Valor devuelto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>selectItem</td>
+          <td>Evento al seleccionar un item.</td>
+          <td>DdrSelectItem</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</base-showcase>

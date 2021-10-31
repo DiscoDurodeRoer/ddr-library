@@ -1,0 +1,25 @@
+<div class="ddr-detail" *ngIf="showDetail" 
+  [@slide] 
+  ddrClickOutside 
+  [avoidFirstTime]="true"
+  [clickOutsideEnabled]="clickOutsideEnabled" 
+  (clickOutside)="closeDetail()">
+
+  <div class="row ddr-detail__title" *ngIf="showTitle">
+    <div class="col-lg-10 col-md-9 col-10">
+      <ng-content select="[detail-title]"></ng-content>
+    </div>
+    <div class="col-lg-2 col-md-3 col-2 p-3 text-right">
+      <i class="fa fa-times ddr-detail__close" (click)="closeDetail()"></i>
+    </div>
+  </div>
+
+  <div class="row ddr-detail__content">
+    <div class="col-12">
+      <ng-content select="[detail-content]"></ng-content>
+    </div>
+  </div>
+
+</div>
+
+<div class="ddr-overlay" *ngIf="showDetail && showOverlay"></div>

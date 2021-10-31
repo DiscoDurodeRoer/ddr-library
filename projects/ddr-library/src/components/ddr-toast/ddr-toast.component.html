@@ -1,0 +1,18 @@
+<div class="ddr-toast">
+
+  <div [@overlayAnimation]="{value: 'visible'}" class="ddr-toast__container"
+    [ngClass]="'text-light bg-' + toast.type + ' border-' + toast.type"
+    *ngFor="let toast of toastService.toasts">
+
+    <div class="ddr-toast__container--title">
+      <span class="ddr-toast__container--title--message">{{toast.title}}</span>
+      <i class="fa fa-times ddr-toast__container--title--close-toast" (click)="closeToast(toast)"></i>
+    </div>
+
+    <div class="ddr-toast__container--content">
+      <span>{{toast.message}}</span>
+    </div>
+
+  </div>
+
+</div>

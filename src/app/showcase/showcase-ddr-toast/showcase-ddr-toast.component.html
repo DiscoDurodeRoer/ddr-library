@@ -1,0 +1,186 @@
+<base-showcase [showOutputs]="false">
+
+  <div examples>
+
+    <div class="row">
+      <div class="col-12">
+
+        <div class="row">
+          <div class="col-12 subtitle-ddr">
+            <span>Ejemplo 1: Info</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <button class="btn btn-primary" (click)="addInfo()">Mensaje de info</button>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col-12 subtitle-ddr">
+            <span>Ejemplo 2: Error</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <button class="btn btn-primary" (click)="addError()">Mensaje de error</button>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col-12 subtitle-ddr">
+            <span>Ejemplo 3: Warning</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <button class="btn btn-primary" (click)="addWarning()">Mensaje de warning</button>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col-12 subtitle-ddr">
+            <span>Ejemplo 4: Success</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <button class="btn btn-primary" (click)="addSuccess()">Mensaje de success</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div code>
+    <ddr-tabs>
+      <ddr-tab-item title="HTML">
+        <pre><code class="language-markup" pCode ngNonBindable>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-12&quot;&gt;
+
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-12 subtitle-ddr&quot;&gt;
+        &lt;span&gt;Ejemplo 1: Info&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-12&quot;&gt;
+        &lt;button class=&quot;btn btn-primary&quot; (click)=&quot;addInfo()&quot;&gt;Mensaje de info&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;row mt-3&quot;&gt;
+      &lt;div class=&quot;col-12 subtitle-ddr&quot;&gt;
+        &lt;span&gt;Ejemplo 2: Error&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-12&quot;&gt;
+        &lt;button class=&quot;btn btn-primary&quot; (click)=&quot;addError()&quot;&gt;Mensaje de error&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;row mt-3&quot;&gt;
+      &lt;div class=&quot;col-12 subtitle-ddr&quot;&gt;
+        &lt;span&gt;Ejemplo 3: Warning&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-12&quot;&gt;
+        &lt;button class=&quot;btn btn-primary&quot; (click)=&quot;addWarning()&quot;&gt;Mensaje de warning&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;row mt-3&quot;&gt;
+      &lt;div class=&quot;col-12 subtitle-ddr&quot;&gt;
+        &lt;span&gt;Ejemplo 4: Success&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-12&quot;&gt;
+        &lt;button class=&quot;btn btn-primary&quot; (click)=&quot;addSuccess()&quot;&gt;Mensaje de success&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </ddr-tab-item>
+      
+      <ddr-tab-item title="CSS">
+        <pre><code class="language-css" pCode ngNonBindable></code></pre>
+      </ddr-tab-item>
+      
+      <ddr-tab-item title="TS">
+        <pre><code class="language-typescript" pCode ngNonBindable>import &#123; DdrCacheService &#125; from './../../services/ddr-cache.service';
+import &#123; DdrToastService &#125; from 'ddr-library';
+import &#123; Component &#125; from '@angular/core';
+
+@Component(&#123;
+  selector: 'app-showcase-ddr-toast',
+  templateUrl: './showcase-ddr-toast.component.html',
+  styleUrls: ['./showcase-ddr-toast.component.scss']
+&#125;)
+export class ShowcaseDdrToastComponent &#123;
+
+  constructor(
+    private ddrToast: DdrToastService,
+    private ddrCache: DdrCacheService
+  ) &#123; 
+    this.ddrCache.setElement('title', 'Toast');
+  &#125;
+
+  addInfo()&#123;
+    this.ddrToast.addInfoMessage("info", "mensaje info");
+  &#125;
+
+  addError()&#123;
+    this.ddrToast.addErrorMessage("error", "mensaje error");
+  &#125;
+
+  addWarning()&#123;
+    this.ddrToast.addWarningMessage("warning", "mensaje warning");
+  &#125;
+
+  addSuccess()&#123;
+    this.ddrToast.addSuccessMessage("success", "mensaje success");
+  &#125;
+
+&#125;</code></pre>
+      </ddr-tab-item>
+    </ddr-tabs>
+  </div>
+
+  <div class="scrollable" inputs>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Tipo</th>
+          <th>Valor por defecto</th>
+          <th>Posibles valores</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>timeout</td>
+          <td>Tiempo de duración del toast (milisegundos).</td>
+          <td>number</td>
+          <td>5000</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</base-showcase>

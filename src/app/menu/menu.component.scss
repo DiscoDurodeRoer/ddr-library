@@ -1,0 +1,137 @@
+.ddr-menu {
+
+
+    .sidebar {
+        display: inline-block;
+        background: #000;
+        height: 100vh;
+        text-align: center;
+        max-width: 80px;
+        overflow: hidden;
+        position: relative;
+        border-right: 0.1px solid #FFF;
+        div {
+            cursor: pointer;
+            img{
+                width: 50px;
+                height: 50px;
+            }
+            &.logo-npm{
+                img {
+                    height: 25px;
+                }
+            }
+        }
+
+    }
+
+    .logo {
+        padding: 10px 15px;
+        border-bottom: 0.1px solid #FFF;
+    }
+
+    .logo-npm{
+        position: absolute;
+        bottom: 30px;
+        left: 15%;
+    }
+
+    .logo-theme{
+        position: absolute;
+        bottom: 80px;
+        left: 15%;
+    }
+
+    .logo-twitter{
+        position: absolute;
+        bottom: 150px;
+        left: 15%;
+    }
+
+    .main{
+        display: inline-block;
+        width: calc(100% - 80px);
+        height: 100vh;
+    }
+
+    .main-bar{
+        height: 70px;
+        background: #000;
+        text-align: center;
+        color: #FFF;
+        padding-top: 10px;
+        font-family: 'ddr bold';
+        font-size: 32px;
+    }
+
+    .main-content{
+        height: calc(100vh - 70px);
+        overflow-y: auto;
+        overflow-x: hidden;
+        position: relative;
+        padding: 25px;
+        border-top: 0.1px solid #FFF;
+    }
+
+    .detail-menu-items{
+        .ddr-detail{
+            position: absolute;
+            width: 100%;
+            background: #000;
+            color: #FFF;
+        }   
+    }
+
+    .menu-items {
+
+        position: fixed;
+        width: calc(100% - 80px);
+        height: calc(100% - 70px);
+
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+
+
+    .menu-item {
+        border: 1px solid #FFF;
+        border-radius: 4px;
+        height: 45px;
+        margin: 10px;
+        margin-left: 0px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover{
+            color:#000;
+            background: #FFF;
+        }
+    }
+
+
+    .input-group{
+
+        input{
+            border-radius: 4px !important;
+            outline: 0px;
+            &:focus{
+                outline: 0px !important;
+                box-shadow: none !important;
+            }
+        }
+        button{
+            height: 100%;
+            width: 32px;
+            background-color: transparent;
+            border-color: transparent;
+            position: absolute;
+            right: 0px;
+            z-index: 999;
+        }
+    }
+
+
+}

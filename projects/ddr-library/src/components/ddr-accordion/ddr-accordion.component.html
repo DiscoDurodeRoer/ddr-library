@@ -1,0 +1,28 @@
+<div class="ddr-accordion">
+
+  <div class="ddr-accordion__title" 
+    [ngClass]="{'ddr-accordion__title--is-opened': open,'ddr-accordion__title--is-closed': !open}"
+    (click)="openClose()">
+
+    <div class="row">
+      <div class="col-md-11 col-10 text-left">
+        <span class="ddr-accordion__title--text">{{title}}</span>
+      </div>
+      <div class="col-md-1 col-2 text-right">
+        <i class="fa fa-angle-down ddr-accordion__title--icon" *ngIf="!open"></i>
+        <i class="fa fa-angle-up ddr-accordion__title--icon" *ngIf="open"></i>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="ddr-accordion__content" #contentAccordion
+    [@slideInOut]="state"
+    [ngClass]="{'ddr-accordion__content--is-opened': open, 'ddr-accordion__content--is-closed': !open }" 
+    style="height:0px">
+    
+    <ng-content select="[content-accordion]"></ng-content>
+
+  </div>
+
+</div>

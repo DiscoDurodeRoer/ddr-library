@@ -1,0 +1,128 @@
+
+
+<base-showcase [showInputs]="false" [showOutputs]="false">
+
+  <div examples>
+
+    <div class="row">
+      <div class="col-12">
+        <p>{{('label.example.1' | ddrTranslate) + ' ' + ('label.example.2' | ddrTranslate)&#125;&#125;</p>
+        <p>{{'label.see.console' | ddrTranslate&#125;&#125;</p>  
+      </div>
+    </div>
+
+  </div>
+
+  <div code>
+    <ddr-tabs>
+      <ddr-tab-item title="HTML">
+        <pre><code class="language-markup" pCode ngNonBindable>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-12&quot;&gt;
+    &lt;p&gt;&#123;&#123;('label.example.1' | ddrTranslate) + ' ' + ('label.example.2' | ddrTranslate)&#125;&#125;&lt;/p&gt;
+    &lt;p&gt;&#123;&#123;'label.see.console' | ddrTranslate&#125;&#125;&lt;/p&gt;  
+  &lt;/div&gt;
+&lt;/div&gt;
+        </code></pre>
+      </ddr-tab-item>
+      
+      <ddr-tab-item title="CSS">
+        <pre><code class="language-css" pCode ngNonBindable></code></pre>
+      </ddr-tab-item>
+      
+      <ddr-tab-item title="TS">
+        -- Showcase
+        <pre><code class="language-typescript" pCode ngNonBindable>import &#123; DdrToastService &#125; from 'ddr-library';
+import &#123; DdrCacheService &#125; from './../../services/ddr-cache.service';
+import &#123; DdrTranslateService &#125; from 'ddr-library';
+import &#123; Component, OnInit &#125; from '@angular/core';
+
+@Component(&#123;
+  selector: 'app-showcase-ddr-translate',
+  templateUrl: './showcase-ddr-translate.component.html',
+  styleUrls: ['./showcase-ddr-translate.component.scss']
+&#125;)
+export class ShowcaseDdrTranslateComponent implements OnInit &#123;
+
+  constructor(
+    private ddrCache: DdrCacheService,
+    private ddrToast: DdrToastService,
+    private translateService: DdrTranslateService,
+  ) &#123; 
+    this.ddrCache.setElement('title', 'DdrTranslate')
+  &#125;
+
+  ngOnInit() &#123;
+    console.log(this.translateService.getTranslate('label.example.1'));
+    console.log(this.translateService.getTranslate('label.example.2'));
+    this.ddrToast.addInfoMessage("Mensaje traducido", "label.example.1 => " + this.translateService.getTranslate('label.example.1'));
+    this.ddrToast.addInfoMessage("Mensaje traducido", "label.example.2 => " +this.translateService.getTranslate('label.example.2'));
+  &#125;
+
+&#125;</code></pre>
+    -- JSON
+    <pre><code class="language-typescript" pCode ngNonBindable>&#123;
+  "variable1": "variable1",
+  "variable2": "variable2",
+  "showElement": true,
+  "variable3": &#123;
+      "subvariable1": "soy un valor anidado"
+  &#125;,
+  "values": [
+      &#123;
+          "label": "label1",
+          "value": "value1"
+      &#125;,
+      &#123;
+          "label": "label2",
+          "value": "value2"
+      &#125;,
+      &#123;
+          "label": "label3",
+          "value": "value3"
+      &#125;
+  ]
+&#125;</code></pre>   
+      -- App module
+      <pre><code class="language-typescript" pCode ngNonBindable>
+import &#125; DdrTranslateService &#125; from 'ddr-library';
+import &#125; ShowcaseDdrTranslateComponent &#125; from './showcase/showcase-ddr-translate/showcase-ddr-translate.component';
+import &#125;BrowserAnimationsModule&#125; from '@angular/platform-browser/animations';
+
+import &#125; APP_INITIALIZER, NgModule &#125; from '@angular/core';
+import &#125; BrowserModule &#125; from '@angular/platform-browser';
+import &#125; DdrLibraryModule &#125; from 'ddr-library';
+import &#125; AppRoutingModule &#125; from './app-routing.module';
+import &#125; AppComponent &#125; from './app.component';
+
+export function translateFactory(provider: DdrTranslateService)&#125;
+  return () => provider.getData('assets/i18n/');
+&#125;
+
+@NgModule(&#125;
+  declarations: [		
+    AppComponent,
+    ShowcaseDdrTranslateComponent,
+    ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    DdrLibraryModule
+  ],
+  providers: [
+    DdrTranslateService,
+    &#125;
+      provide: APP_INITIALIZER,
+      useFactory: translateFactory,
+      deps:[DdrTranslateService],
+      multi: true
+    &#125;
+  ],
+  bootstrap: [AppComponent]
+&#125;)
+export class AppModule &#125; &#125;</code></pre>
+      </ddr-tab-item>
+    </ddr-tabs>
+  </div>
+
+</base-showcase>

@@ -1,9 +1,9 @@
 {
   "name": "ddr-library",
-  "version": "12.16.2",
+  "version": "13.0.1",
   "peerDependencies": {
-    "@angular/common": "^12.2.0",
-    "@angular/core": "^12.2.0"
+    "@angular/common": "~13.0.2",
+    "@angular/core": "~13.0.2"
   },
   "author": {
     "email": "administrador@discoduroderoer.es",

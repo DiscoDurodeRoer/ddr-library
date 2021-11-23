@@ -12,7 +12,6 @@ import { ShowcaseDdrDropdownComponent } from './showcase/showcase-ddr-dropdown/s
 import { ShowcaseClickoutsideComponent } from './showcase/showcase-clickoutside/showcase-clickoutside.component';
 import { ShowcaseDdrToastComponent } from './showcase/showcase-ddr-toast/showcase-ddr-toast.component';
 import { ShowcaseDdrJoinPipeComponent } from './showcase/showcase-ddr-join-pipe/showcase-ddr-join-pipe.component';
-import { ShowcaseDdrExampleComponent } from './showcase/showcase-ddr-example/showcase-ddr-example.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ShowcaseDdrSpinnerComponent } from './showcase/showcase-ddr-spinner/showcase-ddr-spinner.component';
@@ -20,7 +19,6 @@ import { ShowcaseDdrDetailComponent } from './showcase/showcase-ddr-detail/showc
 import { ShowcaseDdrTabsComponent } from './showcase/showcase-ddr-tabs/showcase-ddr-tabs.component';
 
 const routes: Routes = [
-  {path: 'ddr-example', component: ShowcaseDdrExampleComponent},
   {path: 'ddr-join', component: ShowcaseDdrJoinPipeComponent},
   {path: 'ddr-spinner', component: ShowcaseDdrSpinnerComponent},
   {path: 'ddr-toast', component: ShowcaseDdrToastComponent},

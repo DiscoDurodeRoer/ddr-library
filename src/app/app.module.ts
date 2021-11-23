@@ -14,11 +14,9 @@ import { ShowcaseDdrJoinPipeComponent } from './showcase/showcase-ddr-join-pipe/
 
 import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { DdrExampleModule } from 'ddr-example';
 import { DdrLibraryModule } from 'projects/ddr-library/src/ddr-library.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ShowcaseDdrExampleComponent } from './showcase/showcase-ddr-example/showcase-ddr-example.component';
 import { ShowcaseClickoutsideComponent } from './showcase/showcase-clickoutside/showcase-clickoutside.component';
 import { ShowcaseDdrLoadIframeComponent } from './showcase/showcase-ddr-load-iframe/showcase-ddr-load-iframe.component';
 import { ShowcaseDdrBlockListComponent } from './showcase/showcase-ddr-block-list/showcase-ddr-block-list.component';
@@ -41,7 +39,6 @@ export function translateFactory(provider: DdrTranslateService){
 @NgModule({
   declarations: [		
     AppComponent,
-    ShowcaseDdrExampleComponent,
     ShowcaseDdrJoinPipeComponent,
     ShowcaseDdrSpinnerComponent,
     ShowcaseDdrToastComponent,
@@ -65,7 +62,6 @@ export function translateFactory(provider: DdrTranslateService){
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    DdrExampleModule,
     FormsModule,
     CodeHighlighterModule,
     DdrLibraryModule
